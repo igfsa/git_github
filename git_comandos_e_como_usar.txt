@@ -88,6 +88,11 @@
 	Caso tenha necessidade de fazer em todos os arquivos
 	$ git checkout .
 	$ git reset HEAD --hard
-		Este comando também permite que seja voltado após o commit. 
-		
+	
+-> Para retornar ao commit anterior após um novo commit
+	$ git reset HEAD' --hard
+
+-> Observa-se que o uso de git reset recebe como parâmetro um commit, então o comando pode ser utilizado para retornar em determinado commit
+	$ git reset <hashid> --hard
+
 
