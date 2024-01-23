@@ -59,6 +59,21 @@
 	Para retornar ao último commit
 		$ git checkout main
  
+ -> É possível utilizar o git para renomar arquivos ou diretórios
+	$ git mv <item> <novonome>
+	Caso o rename de um item seja feito pelo explorador, será necessário executar o comando git add com o nome do item antigo
 	
-	
-	
+-> Também é possível utilizar o git para deletar arquivos ou diretórios
+	$ git rm <item>
+	Assim como para o rename, ao deletar um item pelo explorador, será necessário executar o comando git add com o nome do item antigo
+
+-> É possível visualizar a diferença entre commits utilizando o git 
+	Diferença entre o momento atual e o último commit:
+		$ git diff
+	Diferença entre o momento atual e um específico commit:
+		$ git diff <hashid>
+	Diferença entre dois específicos commits:
+		$ git diff <hashid mais velho>..<hashid mais novo>
+
+
+
