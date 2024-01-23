@@ -98,7 +98,8 @@
 => Branchs (ramificações) são utilizados para trabalhar com diferentes linhas de trabalho simultaneamente. Uma pessoa pode estar desenvolvendo uma funcionalidade ao mesmo tempo que outra pessoa está desenvolvendo outra.
 A base de um branch é o ponto de inicio do branch, o último commit em comum entre o ramo principal e o novo
 
-						  |--------------> branch B
+						base
+		base			  |--------------> branch B
 --------|-----------------|-----------------------> projeto
         |-------------> branch A
 
@@ -112,11 +113,35 @@ A base de um branch é o ponto de inicio do branch, o último commit em comum en
 => Para alterar para determinada branch 
 	$ git checkout <nome_branch>
 
-=> Para deletar um branch
+=> É possível criar um branch já em seu acesso 
+	$ git checkout -b <nome_branch>
+		A opção -b cria um novo branch, é uma ação correspondente a executar a criação do brench e logo após acessá-lo
+
+=> Para deletar um branch (obs.: o uso de -D ao invés de -d força a deleção de uma branch que não foi adicioanada a principal através de merge ou rebase)
 	$ git branch -D <nome_branch>
+
+=> Merges mesclam duas branchs em um novo commit posterior na branch principal
+
+				 base			merge
+main	-1-2-3-4-|-5-6-7-8-9-10-11|-12-13-14-> 
+branch 			 |a.5-a.6-a.7-a.8/ 
 
 => Para fazer um merge entre branchs 
 	$ git merge <nome_branch>
 		O comando deve ser rodado da branch principal com o parâmetro sendo a branch a ser adicionada
+		Após o merge, a branch auxiliar pode ser deletada
+			$ git branch -d <nome_branch>
+
+=> Rebases inserem as mudanças da branch no momento da base e criam uma nova base a partir deste ponto, inserindo as modificações feitas na main após a nova base
+
+				base			 rebase (nova base)
+main	-1-2-3-4|                |-5-6-7-8-9-10-11-12-> 
+branch 			|a.5-a.6-a.7-a.8/ 
+
+
+
+
+
+
 
 
