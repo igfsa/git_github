@@ -95,4 +95,23 @@
 -> Observa-se que o uso de git reset recebe como parâmetro um commit, então o comando pode ser utilizado para retornar em determinado commit
 	$ git reset <hashid> --hard
 
+-> Branchs (ramificações) são utilizados para trabalhar com diferentes linhas de trabalho simultaneamente. Uma pessoa pode estar desenvolvendo uma funcionalidade ao mesmo tempo que outra pessoa está desenvolvendo outra.
+A base de um branch é o ponto de inicio do branch, o último commit em comum entre o ramo principal e o novo
+
+						  |--------------> branch B
+--------|-----------------|-----------------------> projeto
+        |--------------> branch A
+
+-> É possível ver os branchs existentes no projeto
+	$ git branch 
+	O branch principal (branch que está sendo utilizado no momento) é indicado com um asterisco  
+
+-> Para criar um novo branch
+	$ git branch <nome>
+
+-> Para alterar para determinada branch 
+	$ git checkout <nome_branch>
+
+
+
 
