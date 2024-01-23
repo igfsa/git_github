@@ -78,6 +78,7 @@
 		$ git diff <hashid mais velho>..<hashid mais novo>
 
 -> O comando ammend permite alteração do último commit. Caso a mensagem do arquivo esteja errada ou tenha faltado algum item, este comando permite refazer no último commit 
--> É possível corrigir a mensagem do último commit
 	$ git commit --amend -m '<mensagem>'
-	
+
+-> Um item que foi adicionado ao estágio (através de git add) pode ser removido
+	$ git restore --staged exemplo.html
