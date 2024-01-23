@@ -70,10 +70,14 @@
 -> É possível visualizar a diferença entre commits utilizando o git 
 	Diferença entre o momento atual e o último commit:
 		$ git diff
+	Diferença entre as mudanças indicadas em status e o último commit:
+		$ git diff --staged 
 	Diferença entre o momento atual e um específico commit:
 		$ git diff <hashid>
 	Diferença entre dois específicos commits:
 		$ git diff <hashid mais velho>..<hashid mais novo>
 
-
-
+-> O comando ammend permite alteração do último commit. Caso a mensagem do arquivo esteja errada ou tenha faltado algum item, este comando permite refazer no último commit 
+-> É possível corrigir a mensagem do último commit
+	$ git commit --amend -m '<mensagem>'
+	
