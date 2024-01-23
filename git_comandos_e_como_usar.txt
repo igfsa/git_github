@@ -1,0 +1,64 @@
+-> Iniciar o git 
+	$ git init
+
+-> Monitorar o projeto com o git, se existem mudanças a serem adicionadas ou commitadas, etc
+	$ git status
+
+-> O arquivo .gitignore serve para adicionar diferentes arquivos ou tipos de arquivos que devem ser ignorados para o repositório git. Por exemplo, arquivos de textes, arquivos de banco de dados, ou arquivos com credenciais
+	Podem ser adicionados:
+		arquivos, como <exemplo.txt> 
+		diretórios. como <**diretorio>, ao utilizar ** o git mapeia os subdiretórios 
+		extensões, como <*.sql>, desta forma, todos os arquivos com a extensão indicada serão ignorados
+	O link a sequir apresenta um repositório no git com modelos de gitignore para os principais tipos de projetos https://github.com/github/gitignore
+
+-> Ao iniciar o git em um repositório deve ser iniciado um usuário para identificar quem está realizando as operações
+	$ git config user.name "<usuario>"
+	$ git config user.email "<usuario@email.com>"
+	Em computadores com apenas um usuário os usuários podem ser habilitados globalmente, assim ao iniciar um novo repositório o usuário será inciado automaticamente 
+		$ git config --global user.name "usuario"
+		$ git config --global user.email "usuario@email.com"
+	O usuário inciado pode ser identificado no arquivo config, existente dentro da pasta git. Ao utilizar $ git config estamos alterando este arquivo (config)
+
+-> Para adicionar ou atualizar um arquivo ao repositório git, é necessário utilizar o comando 
+	$ git add <arquivo> 
+-> Podem ser adicionados ou atualizados todos arquivos ao mesmo tempo artavés do comando 
+	$ git add . 
+
+-> Após a criação e adição nos repositórios locais, é necessário adicionar o arquivo ao repositório remoto do git através de commit, podemos identificar se existem arquivos a serem commitados, podemos verificar o status do repositório
+	$ git commit -m '<mensagem>'
+		A opção -m do comando commit permite adicionar uma mensagem ao commit realizado. 
+		Como retorno do commit, recebemos informações da operação realizada e o hash id da operação no repositório remoto.
+
+-> Visualizar o log do repositório
+	$ git log
+		Aqui é possível identificar os commits que ocorreram no repositório. O hash id retornado quando realizamos um add ao repositório são os 7 primeiros digitos das identificações das operações retornadas no arquivo de log
+		Também são retornados o comentário e dados de hora e data e usuário
+		Para navegar na saída do comando, a tecla enter exibe mais linhas e ctrl+b volta para as linhas iniciais. Digitar /<exemplo> permite realizar busca dentro do log 
+		Para sair do arquivo digitar q
+	Para visualizar os ultimos n logs
+		$ git log -n
+	Para visualizar os logs resumidos em uma linha 
+		$ git log --oneline
+	Para visualizar os logs antes de determinada data
+		$ git log --before="<AAAA-MM-DD>"
+	Para visualizar os logs depois de determinada data
+		$ git log --after="<AAAA-MM-DD>"
+	Para visualizar os logs desde de determinado tempo
+		$ git log --since="<n> days ago"
+	Para visualizar os logs de determinado autor 
+		$ git log --author="<nome>"
+			*Obs: Case sensitive, porém realiza a busca parcial, não é necessário digitar o nome completo
+	Para alterar se o log será retornado exibindo todo o arquivo 
+		$ git config core.pager cat
+	Caso seja desejado que o log exiba apenas o tamanho da tela do terminal 
+		$ git config core.pager less
+		
+-> O arquivo log identifica os últimos commits no repositório local e remoto, no último commit vemos o indicativo head. Este indicativo mostra a "cabeça" atual do repositório
+	Porém, é possível indicar outro id como head, assim fazendo com que a imagem dos arquivos volte ao ponto do 
+		$ git checkout <hashid>
+	Para retornar ao último commit
+		$ git checkout main
+ 
+	
+	
+	
