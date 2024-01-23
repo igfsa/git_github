@@ -157,6 +157,9 @@ branch 			|a.5-a.6-a.7-a.8/
 		Os arquivos ficam armazenados dentro da pasta config, para serem adicionados na pasta princiapal, deve ser executado
 			$ git rebase
 
+=> Para realizar as duas operações (fetch e rebase juntamente) 
+	$ git pull
+
 
 
 
