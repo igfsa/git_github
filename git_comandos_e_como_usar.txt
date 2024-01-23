@@ -82,3 +82,12 @@
 
 -> Um item que foi adicionado ao estágio (através de git add) pode ser removido
 	$ git restore --staged exemplo.html
+
+-> É possível retornar um item ao ponto do último commit (o arquivo não pode estar em estágio)
+	$ git checkout <item>
+	Caso tenha necessidade de fazer em todos os arquivos
+	$ git checkout .
+	$ git reset HEAD --hard
+		Este comando também permite que seja voltado após o commit. 
+		
+
