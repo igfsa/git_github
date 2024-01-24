@@ -154,12 +154,16 @@ branch 			|a.5-a.6-a.7-a.8/
 
 => Trabalhando de um projeto clonado é possível buscar novos commits sem realizar mesclagem com o trabalho feito no projeto de origem
 	$ git fetch
-		Os arquivos ficam armazenados dentro da pasta config, para serem adicionados na pasta princiapal, deve ser executado
-			$ git rebase
+		Os arquivos ficam armazenados dentro da pasta config, para serem adicionados na pasta princiapal, deve ser realizado um rebase ou um merge
 
 => Para realizar as duas operações (fetch e rebase juntamente) 
 	$ git pull 
 		O projeto corrente não deve possuir commits a serem enviados para o projeto de origem
 
-
+=> Bare repositories são repositórios centralizados, utilizados para compartilhamento de códigos entre diferentes sessões. O GitHub é um exemplo de bare repository
+	Permite que ourtos repositórios enviem push com modificações para esse repositório central 
+	Ao criar um bare, o repositório é iniciado sem a pasta .git, o conteúdo dessa pasta é criado diretamente na pasta
+	$ git init --bare 
+		Os diretórios que irão enviar as modificações ao bare devem clonar o diretório bare inicial
+		
 
