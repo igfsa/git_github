@@ -149,17 +149,17 @@ branch 			|a.5-a.6-a.7-a.8/
 		Após o rebase, a branch auxiliar pode ser deletada
 			$ git branch -d <nome_branch>
 
-=> É possível utilizar o git para clonar projetos em diferentes locais. Desta forma é possível, posteriormente, buscar e enviar novos commits no repositório de origem
+=> É possível utilizar o git para clonar projetos em diferentes locais. Desta forma é possível, posteriormente, buscar e enviar novos commits no projeto de origem
 	$ git clone <projeto base> <local de clonagem>
 
-=> Trabalhando de um repositório clonado é possível buscar novos commits sem realizar mesclagem com o trabalho feito no repositório de origem
+=> Trabalhando de um projeto clonado é possível buscar novos commits sem realizar mesclagem com o trabalho feito no projeto de origem
 	$ git fetch
 		Os arquivos ficam armazenados dentro da pasta config, para serem adicionados na pasta princiapal, deve ser executado
 			$ git rebase
 
 => Para realizar as duas operações (fetch e rebase juntamente) 
-	$ git pull
-
+	$ git pull 
+		O projeto corrente não deve possuir commits a serem enviados para o projeto de origem
 
 
 
