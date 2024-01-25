@@ -120,7 +120,7 @@ A base de um branch é o ponto de inicio do branch, o último commit em comum en
 
 => É possível criar um branch já em seu acesso 
 	$ git checkout -b <nome_branch>
-		A opção -b cria um novo branch, é uma ação correspondente a executar a criação do brench e logo após acessá-lo
+		A opção -b cria um novo branch, é uma ação correspondente a executar a criação do branch e logo após acessá-lo
 
 => Para deletar um branch (obs.: o uso de -D ao invés de -d força a deleção de uma branch que não foi adicioanada a principal através de merge ou rebase)
 	$ git branch -D <nome_branch>
@@ -165,5 +165,34 @@ branch 			|a.5-a.6-a.7-a.8/
 	Ao criar um bare, o repositório é iniciado sem a pasta .git, o conteúdo dessa pasta é criado diretamente na pasta
 	$ git init --bare 
 		Os diretórios que irão enviar as modificações ao bare devem clonar o diretório bare inicial
-		
+
+=> Com o uso de bare repositories é possível subir para o repositório central modificações feitas
+	$ git push
+
+=> As tags no git indicam um determinado commit, representando o momento indicado. Similar aos branchs, onde ao realizar um branch é criado uma base para o mesmo, porém as tags não permitem novos commits baseados nelas
+	Tags são úteis para versionamento ou entregas parciais de funcionalidade por exemplo. Permitem que o ambiente seja copiado ou visualizado no momento que foi criada 
+
+				tag				  tag
+main	-1-2-3-4-|-5-6-7-8-9-10-11-|-12-13-14-> 
+				v1.0			  v2.0
+
+=> Para criar uma tag 
+	$ git tag <nome_tag>
+
+=> Para visualizar as tags existentes
+	$ git tag
+
+=> Após a criaçâo a tag deve ser enviada via push para o repositório centralizador
+	$ git push origin <nome_tag>
+	Uma vez no repositório central, ela funcionará como outros objetos, sendo necessário que os outros repositórios façam um pull para acessá-la
+
+=> É possível acessar as tags e visualizar o repositório em seu momento
+	$ git checkout <nome_tag>
+	Como não é possível realizar commits em tags, para trabalhar nas mesmas é necessário criar um branch baseado na tag. É possível criar e já fazer o acesso com apenas um comando
+		$ git switch -c <nome_branch>
+		$ git checkout -b <nome_branch>
+			Os comandos acima realizam a mesma ação. O comando checkout foi inserido primeiramente e realiza ações visando branchs e arquivos. O git, para evitar confusões, em 2019 criou os comandos switch para manipular apenas brenchs e restore para manipular apenas arquivos
+			Após a criação da branch o processo de criação e edição de itens, além do processo de commits são feitos de forma normal
+
+ 
 
