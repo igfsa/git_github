@@ -1,0 +1,10 @@
+=> Ao trabalhar com repositórios no github é necessário inicialmente criar o repositório na plataforma 
+
+=> Uma vez criado, deve ser replicado em um diretório na máquina local 
+    $ git init
+    $ git add README.md
+    $ git commit -m 'Primeiro commit'
+    $ git remote add origin <url do repositório do github>
+    $ git push -u origin master
+
+

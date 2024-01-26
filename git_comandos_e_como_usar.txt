@@ -192,7 +192,5 @@ main	-1-2-3-4-|-5-6-7-8-9-10-11-|-12-13-14->
 		$ git switch -c <nome_branch>
 		$ git checkout -b <nome_branch>
 			Os comandos acima realizam a mesma ação. O comando checkout foi inserido primeiramente e realiza ações visando branchs e arquivos. O git, para evitar confusões, em 2019 criou os comandos switch para manipular apenas brenchs e restore para manipular apenas arquivos
-			Após a criação da branch o processo de criação e edição de itens, além do processo de commits são feitos de forma normal
-
- 
+			Após a criação da branch o processo de criação e edição de itens, além do processo de commits são feitos de forma normal. Uma vez finalizada as alterações na branch ela pode ser mesclada à master e pode ser cirada uma nova tag
 
