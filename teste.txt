@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 pao com bufa
+=======
+teste
+>>>>>>> b8304edd7b328f1769f3b290d793664bd88d0cde
