@@ -7,4 +7,19 @@
     $ git remote add origin <url do repositório do github>
     $ git push -u origin master
 
+=> O GitHub possui necessidade de configuração de chave SSH para realizar operações em seus repositórios. Portanto, para realizar pushs e pulls para o repositório no GitHub é necessário configurar o agente SSH na máquina.
+    Gerando a chave SSH
+        $ ssh-keygen -t ed25519 -C "<email>" -f <caminho_do_diretorio>/.ssh/id_ed25519
+            A opção -f nos permite indicar uma pasta diferente da pastao default. No caso foi utilizada pelo uso da pasta compartilhada entre o computador e uma máquina virtual
+    Após gerar a chave é necessário adicioná-la ao agente SSH
+        $ ssh-add <caminho do arquivo com a chave criado acima>
+    Com a chave adicionada ao agente SSH, é necessário adicioná-la no GitHub.
+        perfil > settings > SSH and GPG keys > new SSH key 
+            Deve ser inserido o conteúdo do arquivo id_ed25519.pub, que foi criado no mesmo local que a chave SSH
+
+=> https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+
+
+
+
 
