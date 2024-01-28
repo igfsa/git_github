@@ -5,7 +5,7 @@
     $ git add README.md
     $ git commit -m 'Primeiro commit'
     $ git remote add origin <url do repositório do github>
-    $ git push -u origin master
+    $ git push -u origin main
 
 => O GitHub possui necessidade de configuração de chave SSH para realizar operações em seus repositórios. Portanto, para realizar pushs e pulls para o repositório no GitHub é necessário configurar o agente SSH na máquina.
     Gerando a chave SSH
