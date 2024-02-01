@@ -1,0 +1,33 @@
+=> O Windows não possui bom suporte ao SSH do GitHub, portando existem dificulades para realizar operações de pull, push e clone no terminal e mno PowerShell
+
+=> Para realizar as operações no Windows, a alternativa que mais é aceita é o Git bash, disponibilizado juntamente do Git
+
+=> Além das operações indicadas no arquivo git_github.txt é necessário configurar o serviço OpenSSH Authentication Agent para início automático. Pode ser feito em 'Services' 
+
+=> Ao adicionar o código abaixo ao arquivo ~/.profile ou ~./bashrc, as sessões de bash já iniciarão com o ambiente ssh e a chave configuradas, removendo a necessidade de configurá-las em todo uso
+
+>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<
+env=~/.ssh/agent.env
+
+agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+
+agent_start () {
+    (umask 077; ssh-agent >| "$env")
+    . "$env" >| /dev/null ; }
+
+agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+    agent_start
+    ssh-add <caminho_do_diretorio>/.ssh/id_ed25519
+elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+    ssh-add <caminho_do_diretorio>/.ssh/id_ed25519
+fi
+
+unset env
+>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<>==<
+
+

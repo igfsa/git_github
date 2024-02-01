@@ -11,13 +11,17 @@
     Gerando a chave SSH
         $ ssh-keygen -t ed25519 -C "<email>" -f <caminho_do_diretorio>/.ssh/id_ed25519
             A opção -f nos permite indicar uma pasta diferente da pastao default. No caso foi utilizada pelo uso da pasta compartilhada entre o computador e uma máquina virtual
-    Após gerar a chave é necessário adicioná-la ao agente SSH
+    Após gerar a chave é necessário adicioná-la ao agente SSH **
         $ ssh-add <caminho do arquivo com a chave criado acima>
         Para listar as chaves adicionadas
             $ ssh-add -l 
+        Para remover as chaves 
+            $ ssh-add -D
     Com a chave adicionada ao agente SSH, é necessário adicioná-la no GitHub.
         perfil > settings > SSH and GPG keys > new SSH key 
             Deve ser inserido o conteúdo do arquivo id_ed25519.pub, que foi criado no mesmo local que a chave SSH
+        
+        ** Para uso no Windows, são necessárias configurações adicionais (usar_gitcmd_no_windows.txt) 
 
 => https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 
