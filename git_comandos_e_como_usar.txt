@@ -7,40 +7,41 @@
 => Limpar o projeto git de arquivos e pastas desnecessários ou criados erroneamente (garbage collector). Útil em casos de text file busy
 	$ git gc
 
-=> O arquivo .gitignore serve para adicionar diferentes arquivos ou tipos de arquivos que devem ser ignorados para o repositório git. Por exemplo, arquivos de textes, arquivos de banco de dados, ou arquivos com credenciais
+=> O arquivo .gitignore serve para adicionar diferentes arquivos ou tipos de arquivos que devem ser ignorados para o repositório git. Por exemplo, arquivos de testes, arquivos de banco de dados, ou arquivos com credenciais
 	Podem ser adicionados:
 		arquivos, como <exemplo.txt> 
 		diretórios. como <**diretorio>, ao utilizar ** o git mapeia os subdiretórios 
 		extensões, como <*.sql>, desta forma, todos os arquivos com a extensão indicada serão ignorados
-	O link a sequir apresenta um repositório no git com modelos de gitignore para os principais tipos de projetos https://github.com/github/gitignore
+	O link a seguir apresenta um repositório no git com modelos de gitignore para os principais tipos de projetos https://github.com/github/gitignore
 
 => Ao iniciar o git em um repositório deve ser iniciado um usuário para identificar quem está realizando as operações
 	$ git config user.name "<usuario>"
 	$ git config user.email "<usuario@email.com>"
-	Em computadores com apenas um usuário os usuários podem ser habilitados globalmente, assim ao iniciar um novo repositório o usuário será inciado automaticamente 
+	Em computadores com apenas um usuário os usuários podem ser habilitados globalmente, assim ao iniciar um novo repositório o usuário será iniciado automaticamente 
 		$ git config --global user.name "usuario"
 		$ git config --global user.email "usuario@email.com"
-	O usuário inciado pode ser identificado no arquivo config, existente dentro da pasta git. Ao utilizar $ git config estamos alterando este arquivo (config)
+	O usuário inserido pode ser identificado no arquivo config, existente dentro da pasta git. Ao utilizar $ git config estamos alterando este arquivo (config)
 	Para buscar itens dentro de config podem utilizar a opção --get do comando. Por exemplo, buscar o nome do usuário configurado no repositório
 		$ git config --get user.name
 
-=> Para adicionar ou atualizar um arquivo ao repositório git, é necessário utilizar o comando 
+=> Para adicionar ou atualizar um arquivo ao índice do repositório git, é necessário utilizar o comando 
 	$ git add <arquivo> 
-=> Podem ser adicionados ou atualizados todos arquivos ao mesmo tempo artavés do comando 
-	$ git add . 
+	Podem ser adicionados ou atualizados todos arquivos ao mesmo tempo através do comando 
+		$ git add . 
+	Esta adição se faz necessária sempre que ocorra criação ou alteração de um arquivo no repositório 
 
-=> Após a criação e adição nos repositórios locais, é necessário adicionar o arquivo ao repositório remoto do git através de commit, podemos identificar se existem arquivos a serem commitados, podemos verificar o status do repositório
+=> Após a criação e adição dos arquivos e inclusão no índice do repositório, é necessário realizar um commit, que indicará o estado atual do índice, criando um identificador (hasid) que será adicionado ao log do repositório. 
 	$ git commit -m '<mensagem>'
 		A opção -m do comando commit permite adicionar uma mensagem ao commit realizado. 
 		Como retorno do commit, recebemos informações da operação realizada e o hash id da operação no repositório remoto.
 
 => Visualizar o log do repositório
 	$ git log
-		Aqui é possível identificar os commits que ocorreram no repositório. O hash id retornado quando realizamos um add ao repositório são os 7 primeiros digitos das identificações das operações retornadas no arquivo de log
+		Aqui é possível identificar os commits que ocorreram no repositório. O hash id retornado quando realizamos um add ao repositório são os 7 primeiros dígitos das identificações das operações retornadas no arquivo de log
 		Também são retornados o comentário e dados de hora e data e usuário
 		Para navegar na saída do comando, a tecla enter exibe mais linhas e ctrl+b volta para as linhas iniciais. Digitar /<exemplo> permite realizar busca dentro do log 
 		Para sair do arquivo digitar q
-	Para visualizar os ultimos n logs
+	Para visualizar os últimos n logs
 		$ git log -n
 	Para visualizar os logs resumidos em uma linha 
 		$ git log --oneline
@@ -59,12 +60,12 @@
 		$ git config core.pager less
 		
 => O arquivo log identifica os últimos commits no repositório local e remoto, no último commit vemos o indicativo head. Este indicativo mostra a "cabeça" atual do repositório
-	Porém, é possível indicar outro id como head, assim fazendo com que a imagem dos arquivos volte ao ponto do 
+	Porém, é possível indicar outro id como head, assim fazendo com que a imagem dos arquivos volte ao ponto do commit indicado pelo hashid
 		$ git checkout <hashid>
 	Para retornar ao último commit
 		$ git checkout main
  
- => É possível utilizar o git para renomar arquivos ou diretórios
+ => É possível utilizar o git para renomear arquivos ou diretórios
 	$ git mv <item> <novonome>
 	Caso o rename de um item seja feito pelo explorador, será necessário executar o comando git add com o nome do item antigo
 	
@@ -82,23 +83,36 @@
 	Diferença entre dois específicos commits:
 		$ git diff <hashid mais velho>..<hashid mais novo>
 
-=> O comando ammend permite alteração do último commit. Caso a mensagem do arquivo esteja errada ou tenha faltado algum item, este comando permite refazer no último commit 
+=> O comando amend permite alteração do último commit. Caso a mensagem do arquivo esteja errada ou tenha faltado algum item, este comando permite refazer no último commit 
 	$ git commit --amend -m '<mensagem>'
 
 => Um item que foi adicionado ao estágio (através de git add) pode ser removido
 	$ git restore --staged exemplo.html
 
-=> É possível retornar um item ao ponto do último commit (o arquivo não pode estar em estágio)
-	$ git checkout <item>
-	Caso tenha necessidade de fazer em todos os arquivos
-	$ git checkout .
-	$ git reset HEAD --hard
-	
+=> É possível retornar um item ao ponto do último commit 
+	Para arquivos que não foram colocados em estágio:
+		$ git checkout <item>
+		Caso tenha necessidade de fazer em todos os arquivos
+		$ git checkout .
+	Para arquivos que foram colocados em estágio
+		$ git reset HEAD --hard
+		$ git checkout HEAD -- .
+			A opção -- faz com que o comando ignore opções adicionais	
+
 => Para retornar ao commit anterior após um novo commit
 	$ git reset HEAD' --hard
 
 => Observa-se que o uso de git reset recebe como parâmetro um commit, então o comando pode ser utilizado para retornar em determinado commit
 	$ git reset <hashid> --hard
+
+			    hashid		  	 
+				  /6-7-8-9-10-11->
+main	-1-2-3-4-|5|-x-x-x-x-x-x-| reset 
+                  ^______________/  
+
+ 
+=> O uso de reset sem a opção hard permite reverter a adição de arquivos ao estágio, porém sem perder suas alterações.
+	$ git reset HEAD 
 
 => Branchs (ramificações) são utilizados para trabalhar com diferentes linhas de trabalho simultaneamente. Uma pessoa pode estar desenvolvendo uma funcionalidade ao mesmo tempo que outra pessoa está desenvolvendo outra.
 A base de um branch é o ponto de inicio do branch, o último commit em comum entre o ramo principal e o novo
@@ -122,7 +136,7 @@ A base de um branch é o ponto de inicio do branch, o último commit em comum en
 	$ git checkout -b <nome_branch>
 		A opção -b cria um novo branch, é uma ação correspondente a executar a criação do branch e logo após acessá-lo
 
-=> Para deletar um branch (obs.: o uso de -D ao invés de -d força a deleção de uma branch que não foi adicioanada a principal através de merge ou rebase)
+=> Para deletar um branch (obs.: o uso de -D ao invés de -d força a deleção de uma branch que não foi adicionada a principal através de merge ou rebase)
 	$ git branch -D <nome_branch>
 
 => Merges mesclam duas branchs em um novo commit posterior na branch principal
@@ -154,7 +168,7 @@ branch 			|a.5-a.6-a.7-a.8/
 
 => Trabalhando de um projeto clonado é possível buscar novos commits sem realizar mesclagem com o trabalho feito no projeto de origem
 	$ git fetch
-		Os arquivos ficam armazenados dentro da pasta config, para serem adicionados na pasta princiapal, deve ser realizado um rebase ou um merge
+		Os arquivos ficam armazenados dentro da pasta config, para serem adicionados na pasta principal, deve ser realizado um rebase ou um merge
 
 => Para realizar as duas operações (fetch e rebase juntamente) 
 	$ git pull 
@@ -182,15 +196,26 @@ main	-1-2-3-4-|-5-6-7-8-9-10-11-|-12-13-14->
 => Para visualizar as tags existentes
 	$ git tag
 
-=> Após a criaçâo a tag deve ser enviada via push para o repositório centralizador
+=> Após a criação a tag deve ser enviada via push para o repositório centralizador
 	$ git push origin <nome_tag>
-	Uma vez no repositório central, ela funcionará como outros objetos, sendo necessário que os outros repositórios façam um pull para acessá-la
+	Uma vez no repositório central, ela funcionará como outros objetos (como branchs), sendo necessário que os outros repositórios façam um pull para acessá-la
 
 => É possível acessar as tags e visualizar o repositório em seu momento
 	$ git checkout <nome_tag>
 	Como não é possível realizar commits em tags, para trabalhar nas mesmas é necessário criar um branch baseado na tag. É possível criar e já fazer o acesso com apenas um comando
 		$ git switch -c <nome_branch>
 		$ git checkout -b <nome_branch>
-			Os comandos acima realizam a mesma ação. O comando checkout foi inserido primeiramente e realiza ações visando branchs e arquivos. O git, para evitar confusões, em 2019 criou os comandos switch para manipular apenas brenchs e restore para manipular apenas arquivos
-			Após a criação da branch o processo de criação e edição de itens, além do processo de commits são feitos de forma normal. Uma vez finalizada as alterações na branch ela pode ser mesclada à master e pode ser cirada uma nova tag
+			Os comandos acima realizam a mesma ação. O comando checkout foi inserido primeiramente e realiza ações visando branchs e arquivos. O git, para evitar confusões, em 2019 criou os comandos switch para manipular apenas branchs e restore para manipular apenas arquivos
+			Após a criação da branch o processo de criação e edição de itens, além do processo de commits são feitos de forma normal. Uma vez finalizada as alterações na branch ela pode ser mesclada à master e pode ser criada uma nova tag
 
+=> O comando revert volta os objetos do repositório para um commit indicado, porém não remove os commits anteriores, gerando um novo commit. Desta forma, alterações que foram feitas ainda podem ser acessadas pelo log do repositório
+	$ git revert <hashid>
+		Por padrão o comando já commita as mudanças em sua execução. É um atalho para realizar checkout dos arquivos para um momento anterior, adição de arquivos em estágio e commit com uma mensagem indicando a mudança 
+		Este comando é útil pois mudanças que forem descartadas ainda podem ser vistas no log do repositório
+		Funciona de forma análoga ao comando reset, porém o comando reset remove os commits entre o commit indicado e o momento atual
+
+			    hashid		  	  revert
+main	-1-2-3-4-|5|-6-7-8-9-10-11-|12|-13-14-> 
+                  ^_________________/  
+
+ 

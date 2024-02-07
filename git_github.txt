@@ -5,7 +5,8 @@
     $ git add README.md
     $ git commit -m 'Primeiro commit'
     $ git remote add origin <url do repositório do github>
-    $ git push -u origin main
+    $ git push -u origin master
+        A opção -u permite indicar o ponto de referência para operações. No caso, estamos indicando a branch master em origin como branch de referência
 
 => O GitHub possui necessidade de configuração de chave SSH para realizar operações em seus repositórios. Portanto, para realizar pushs e pulls para o repositório no GitHub é necessário configurar o agente SSH na máquina.
     Gerando a chave SSH
@@ -25,7 +26,22 @@
 
 => https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 
+=> Uma vez com uma conta autenticada é possível trabalhar com os repositórios do GitHub
+    Para trabalhar com um repositório disponível no GitHub
+        Acessar o repositório > Página inicial > Code
+            Geralmente o link SSH é composto por: git@github.com:<usuario dono do repositorio>/<nome do_repositorio>.git
+    Através do link do repositório é possível realizar um clone do mesmo em diretório em uma máquina local 
 
+=> Para repositórios privados, apenas os usuários do Git com uma conta vinculada ao projeto ou usuários com a chave SSH cadastrada em uma conta vinculada ao projeto podem ver e realizar alterações. 
+    
+=> Já repositórios públicos podem ser vistos por todos e podem ser ser realizados clones e pulls por todos usuários. 
+    Uma vez clonado para um repositório na máquina local do usuário, o mesmo pode trabalhar localmente com ele. Porém apenas usuários autorizados podem realizar push
 
+=> Para alterar a visibilidade de um repositório
+    Acessar o repositório > Settings > Danger Zone > Change repository visibility
 
+=> Para alterar os usuários com permissão de acesso ao projeto
+    Acessar o repositório > Settings > Collaborators
+
+=> Na página inicial do projeto é possível visualizar itens relativos a informações como commits, tags e branchs. Estas opções permitem navegar no projeto de forma visual similar ao uso de checkout no terminal.
 
