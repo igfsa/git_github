@@ -45,3 +45,18 @@
 
 => Na página inicial do projeto é possível visualizar itens relativos a informações como commits, tags e branchs. Estas opções permitem navegar no projeto de forma visual similar ao uso de checkout no terminal.
 
+=> Issues permitem inserir apontamentos de erros no projeto. Dentro da página inicial do projeto é possível ver a aba 'Issues', onde é possível visualizar as issues relacionadas ao projeto.
+    Também é possível incluir novas (com descrição, atribuição de responsável, categoria, etc). Usuários externos ao projeto podem apenas criar novas issues para projetos abertos.
+    Portanto, cabe aos responsáveis pelo projeto atribuir o responsável pela correção, classificação, encerrar uma issue e outras ações. 
+    Ao realizar a correção de uma issue, é possível indicar na mensagem do commit com a correção que a issue deve ser encerrada, assim ao realizar o push a issue é encerrada automaticamente. A referência utilizada é o número da issue. 
+        $ git commit -m '... Closes #<numero_issue>'
+
+=> Em projetos de código aberto de outros usuários é possível realizar um fork através da tela inicial do repositório. Isso cria uma cópia independente do repositório na conta que realizou o fork, permitindo que sejam realizadas alterações e teste de forma autônoma. As operações futuras em ambos repositórios não ocasionarão em interferências entre si.     
+
+=> Caso as alterações feitas em um repositório que foi feito fork sejam satisfatórias e o realizador possua interesse em submeter o código ao projeto principal, é possível realizar um pull request. Assim é criada uma solicitação para o responsável pelo projeto para analisar e aceitar ou não a alteração.
+    Uma estratégia para auxiliar na análise do conteúdo criado é realizar a criação de uma nova branch do projeto alterado. Caso sejam válidas, é possível realizar um merge na main do projeto principal. 
+    O comando abaixo permite criar uma nova branch e realizar o fetch 
+        $ git fetch origin pull/<numero_request>/head:<nome_nova_branch>
+    Após realizar as alterações válidas, é possível encerrar a solicitação no commit informando o seu número.
+
+ 
