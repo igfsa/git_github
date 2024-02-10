@@ -5,6 +5,6 @@ Repositório de teste para git, baseado no curso Git e Github Essencial para o D
 
 H<sub>2</sub>O
 
-10<sup>4</sup>=1000
+`10<sup>4</sup>=1000`
 
 
