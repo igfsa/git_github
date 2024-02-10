@@ -3,8 +3,8 @@ Repositório de teste para git, baseado no curso Git e Github Essencial para o D
 
 :joy:
 
-H~2~O
+H<sub>2</sub>O
 
-10 ^4^ =1000
+10<sub>4</sup>=1000
 
-==teste==
+
