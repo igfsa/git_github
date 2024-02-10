@@ -5,6 +5,6 @@ Repositório de teste para git, baseado no curso Git e Github Essencial para o D
 
 H~2~O
 
-10^4^=1000
+10 ^4^ =1000
 
-=teste=
+==teste==
