@@ -28,6 +28,7 @@ Este documento indica e serve de referência para alguns dos principais recursos
 
 ###### Título 6 ######
 
+<<<<<<< HEAD
 => O título h1 também pode ser aplicado ao inserir o sinal '=' na linha abaixo do título e o título h2 também pode ser aplicado ao inserir o sinal '-' na linha abaixo do título. 
 
 Título 1
