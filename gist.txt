@@ -1,0 +1,5 @@
+=> Gists fornecem uma forma simples de compartilhar snippets de código. Desta forma, trechos de código curtos para auxílio ou armazenamento podem ser salvos no GitHub.
+    Gists são repositórios do Git, portanto é possível realizar fork, clone e acompanhar seu histórico de commit. 
+    Também, assim como repositórios podem ser criados como públicos ou privados. Porém um git criado como público não pode ser convertido para um gist secreto. 
+    https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists
+    

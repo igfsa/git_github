@@ -246,7 +246,7 @@ void main() {
 
 ## Notas de rodapé ##
 
-&xrArr; Notas de rodapé podem ser inseridas colocando entre colchetes o nome da nota no local desejado `[nota]` e o conteúdo sendo indicado em outro local com o nome da nota entre colchetes, dois pontos e o conteúdo da nota `[nota]: conteúdo`. Para notas de múltiplas linhas, a tabulação faz o vínculo. Elementos como blocos de código podem ser inseridos e o conteúdo da nota pode ser inserido em qualquer lugar do código desde que não esteja dentro de outros elementos como tabelas.
+&xrArr; Notas de rodapé podem ser inseridas colocando entre colchetes o nome da nota no local desejado `[nota]` e o conteúdo sendo indicado em outro local com o nome da nota entre colchetes, dois pontos e o conteúdo da nota `[nota]: conteúdo`. Para notas de múltiplas linhas, a tabulação faz o vínculo. Elementos como blocos de código podem ser inseridos e o conteúdo da nota pode ser inserido em qualquer lugar do arquivo desde que não esteja dentro de outros elementos como tabelas, porém sua exibição irá ocorrer no final do arquivo.
 
 Esta é uma nota de rodapé [^1].
 
