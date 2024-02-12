@@ -285,7 +285,7 @@ Exemplo com uma imagem:
 
 &xrArr; É possível utilizar símbolos HTML através de seus códigos em um arquivo markdown. O símbolo &xrArr; utilizado neste arquivo é um exemplo. Este [link](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references "Lista de referências de caracteres HTML") possui os símbolos HTML.
 
-&xrArr; Também é possível inserir emojis de forma similar aos símbolos HTML. Este [link](https://gist.github.com/rxaviers/7360908 "Lista de emojis") possui emojis para se utilizar em markdown no GitHub. 
+&xrArr; Também é possível inserir emojis de forma similar aos símbolos HTML. Este [link](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md "Lista de emojis") possui emojis para se utilizar em markdown no GitHub. 
 
 :trollface:
 :shipit:
