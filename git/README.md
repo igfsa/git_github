@@ -1,3 +1,10 @@
+## Introdução ##
+
+O Git é uma plataforma de versionamento de código. 
+Através dele é possível  registrar e visualizar o histórico de arquivos e pastas.
+
+---
+
 ## Iniciar o Git :checkered_flag: ##
 
 &xrArr; O Git opera apenas em repositórios em que ele foi iniciado: 
@@ -26,7 +33,7 @@
 
 ---
 
-## Garbage Collector :wastebasket: :recycle: ##
+## Garbage Collector :wastebasket::recycle: ##
 
 &xrArr; Limpar o projeto git de arquivos e pastas desnecessários ou criados erroneamente (garbage collector). Útil em casos de text file busy:
 
@@ -47,7 +54,7 @@ Este [link](https://github.com/github/gitignore) apresenta um repositório no gi
 
 ---
 
-## Configurar usuário :wrench: :technologist: ##
+## Configurar usuário :wrench::technologist: ##
 
 &xrArr; Ao iniciar o git em um repositório deve ser iniciado um usuário para identificar quem está realizando as operações:
 
@@ -167,7 +174,7 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 ---
 
-## Renomeando arquivos :a: :arrow_right: :b: ##
+## Renomeando arquivos :a::arrow_right::b: ##
 
  &xrArr; É possível utilizar o git para renomear arquivos ou diretórios:
 
@@ -177,7 +184,7 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 ---
 
-## Apagando arquivos :wastebasket: :file_folder: ##
+## Apagando arquivos :wastebasket::file_folder: ##
 
 &xrArr; Também é possível utilizar o git para deletar arquivos ou diretórios:
 
@@ -225,7 +232,7 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 --- 
 
-## Redefinindo arquivos :arrows_counterclockwise: :open_file_folder: ##
+## Redefinindo arquivos :open_file_folder::arrow_heading_down: ##
 
 &xrArr; É possível retornar um item ao ponto do último commit:
 
@@ -251,7 +258,7 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 ---
 
-## Redefinindo o repositório :arrows_counterclockwise: :card_file_box: ##
+## Redefinindo o repositório :card_file_box::arrow_heading_down: ##
 
 &xrArr; Observa-se que o uso de git reset recebe como parâmetro um commit, então o comando pode ser utilizado para retornar o repositório para o estado em determinado commit:
 
@@ -300,7 +307,7 @@ Na saída do comando, a branch principal (branch que está sendo utilizado no mo
 
 ---
 
-## Merge :arrow_right: :o: :arrow_left: ##
+## Merge :arrow_right::o::arrow_left: ##
 
 &xrArr; Merges mesclam duas branchs em um novo commit posterior na branch principal.
 
@@ -393,6 +400,14 @@ Os diretórios que irão enviar as modificações ao bare devem clonar o diretó
 
 ---
 
+## Enviando novas branchs ao repositório central :arrow_up_down::incoming_envelope::file_cabinet: ##
+
+&xrArr; Ao criar novas branchs para um repositório central, é necessário que após cria-lás no repositório local seja feito o envio da branch para o repositório remoto. Também é necessário configurar o ponto de montagem do repositório local para o repositório remoto. Assim será possível enviar commits feitos dentro daquela branch. Uma vez criada, ambas operações podem ser realizadas através do seguinte comando: 
+
+`git push --set-upstream origin <nova_branch>`
+
+---
+
 ## Tags :label: ##
 
 &xrArr; As tags no git marcam um determinado commit, representando o momento indicado. Similar aos branchs, onde ao realizar um branch é criado uma base para o mesmo, porém as tags não permitem novos commits baseados nelas.
@@ -432,7 +447,7 @@ Os comandos acima realizam a mesma ação. O comando checkout foi inserido prime
 
 ---
 
-## Git Revert ##
+## Git Revert :arrows_clockwise::card_file_box: ##
 
 &xrArr; O comando revert volta os objetos do repositório para um commit indicado, porém não remove os commits anteriores, gerando um novo commit. Desta forma, alterações que foram feitas ainda podem ser acessadas pelo log do repositório
 
@@ -444,11 +459,15 @@ Este comando é útil pois mudanças que forem descartadas ainda podem ser vista
 
 Funciona de forma análoga ao comando reset, porém o comando reset remove os commits entre o commit indicado e o momento atual
 
-			    hashid		  	  revert
-main	-1-2-3-4-|5|-6-7-8-9-10-11-|12|-13-14&xrarr; 
-                  ^_________________/  
+<img src="../media/git_revert_escuro.gif" width="500">
 
- &xrArr; Para projetos com divergências entre branchs (por exemplo, um novo commit em uma máquina local e um novo commit no servidor), se faz necessário tratar os erros de conflito. 
+---
+
+## Tratando conflitos :bow_and_arrow::white_flag::dagger: ##
+
+ &xrArr; Conflitos ocorrem quando ao realizar um commit há diferença na imagem do último commit e na imagem do repositório no momento atual (como imagem entende-se o repositório antes das modificações adicionadas ao índice). Por exemplo, ao operar com um repositório remoto, caso tenha ocorrido modificações no repositório remoto após o último pull, os arquivos de referência estarão diferentes do momento que os arquivos foram editados na máquina local. Portanto, o repositório terá diferença entre a imagem do último commit e o real último commit.   
+ 
+ Para projetos com divergências entre branchs, se faz necessário tratar os erros de conflito. 
 
 Por padrão o Git não realiza mais trativas para divergências e exibe uma mensagem de erro.
 
@@ -469,25 +488,25 @@ Por padrão o Git não realiza mais trativas para divergências e exibe uma mens
 
 Conforme exibido na mensagem, existem 3 maneiras de lidar com a situação que podem ser configuradas através de git config: 
 
-&xrArr; merge commit (comportamento padrão histórico)
+* merge commit (comportamento padrão histórico)
 
-`$ git config pull.rebase false`
+	`$ git config pull.rebase false`
 
-Cria um novo commit que é pai dos commits que estão em conflito. Por sem um merge, pode gerar conflitos.
+	Cria um novo commit que é pai dos commits que estão em conflito. Por sem um merge, pode gerar conflitos.
 
-&xrArr; rebasing nos commit locais 
+* rebasing nos commit locais 
 
-`$ git config pull.rebase true`
+	`$ git config pull.rebase true`
 
-Ao realizar um rebase nos commits locais, é possível adicionar os commits do servidor remoto na master branch primeiramente e depois realizar um merge entre este e nossos commits locais. Devido ao merge também pode gerar conflitos
+	Ao realizar um rebase nos commits locais, é possível adicionar os commits do servidor remoto na master branch primeiramente e depois realizar um merge entre este e nossos commits locais. Devido ao merge também pode gerar conflitos
 
-&xrarr; não faça nada por padrão (fast-forward)
+* não faça nada por padrão (fast-forward)
 
-`$ git config pull.ff only` 
+	`$ git config pull.ff only` 
 
-Realiza as operações que não requerem nenhuma tratativa de conflitos, caso seja necessário, o processo é abrotado e é retornado uma mensagem de erro. 
+	Realiza as operações que não requerem nenhuma tratativa de conflitos, caso seja necessário, o processo é abrotado e é retornado uma mensagem de erro. 
 
-É uma estratégia que possui benefícios pois os conflitos são tratados manualmente, assim reduzindo a chance de erros ou correções impróprias.
+	É uma estratégia que possui benefícios pois os conflitos são tratados manualmente, assim reduzindo a chance de erros ou correções impróprias.
 
 Independente das configurações aplicadas, é possível aplicar um pull com instruções para rebase simples 
 
@@ -506,6 +525,3 @@ Com as alterações adicionadas para estágio, será necessário realizar um com
 `$ git rebase --continue`		
 		
 Após essas operações, será retornado para a branch principal com um novo commit realizado, assim criando a necessidade de realizar por fim o pull
-
-
-

@@ -4,13 +4,13 @@
 
 Este documento indica e serve de referência para alguns dos principais recursos, este [link](https://www.markdownguide.org/ "Markdown Guide") é um guia para markdown que possui comandos além dos vistos aqui.
 
---------------------------
+---
 
 ## Parágrafos ##
 
 &xrArr; Para separar parágrafos devem ser utilizados dois enters, assim irá ocorrer a renderização do elemento como um parágrafo. Um enter simples indica quebra de linha, mas não um novo parágrafo.
 
---------------------------
+---
 
 ## Títulos ##
 
@@ -36,13 +36,13 @@ Título 1
 Título 2
 -
 
---------------------------
+---
 
 ## Divisão horizontal ##
 
 &xrArr; Uma divisão horizontal pode ser feita inserindo `---` em uma linha.
 
---------------------------
+---
 
 ## Itálico ##
 
@@ -50,7 +50,7 @@ Título 2
 
 _Itálico 1_ *Itálico 2*
 
---------------------------
+---
 
 ## Negrito ##
 
@@ -58,7 +58,7 @@ _Itálico 1_ *Itálico 2*
 
 __Negrito 1__ **Negrito 2**
 
---------------------------
+---
 
 ## Tachado ##
 
@@ -66,7 +66,7 @@ __Negrito 1__ **Negrito 2**
 
 ~~A terra é plana~~
 
---------------------------
+---
 
 ## Subscrito ##
 
@@ -74,14 +74,15 @@ __Negrito 1__ **Negrito 2**
 
 H<sub>2</sub>O
 
---------------------------
+---
+
 ## Sobrescrito ##
 
 &xrArr; Sobrescrito pode ser feito inserindo o conteúdo entre `<sup></sup>`.
 
 10<sup>7</sup>
 
-__________________________
+---
 
 ## Links ##
 
@@ -93,7 +94,7 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
 
 <https://www.riss.com.br>
 
---------------------------
+---
 
 ## Citações ##
 
@@ -101,7 +102,7 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
 
 > Este é um exemplo de citação.
 
---------------------------
+---
 
 ## Listas ##
 
@@ -144,13 +145,13 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
    1. Sandero
       1. 1.0
 
---------------------------
+---
 
 ## Imagens ##
 
 &xrArr; Imagens presentes no diretório podem ser inseridas. É feito de forma semelhante à inserção de links, com necessidade de inserir o símbolo ! antes do primeiro colchete.
 
-![et](media/et.png "et")
+![et](../media/et.png "et")
 
 &xrArr; Imagens da web também podem ser inseridas da mesma forma.
 
@@ -158,9 +159,9 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
 
 &xrArr; Também pode ser utilizado HTML para inserir imagens em um markdown, porém nem todos renderizadores possuem suporte. Desta forma, é possível alterar o tamanho de exibição da imagem. 
 
-<img src="media/et.png" width="300">
+<img src="../media/et.png" width="300">
 
---------------------------
+---
 
 ## Tabelas ##
 
@@ -182,7 +183,7 @@ Potência | Valor
 10<sup>3</sup>|1000
 10<sup>4</sup>|10000
 
---------------------------
+---
 
 ## Texto de código ##
 
@@ -230,7 +231,7 @@ void main() {
 </html>
 ```
 
---------------------------
+---
 
 ## Lista de tarefas ##
 
@@ -242,7 +243,7 @@ void main() {
   - [X] Tomar banho
   - [ ] Tomar café
 
---------------------------
+---
 
 ## Notas de rodapé ##
 
@@ -263,7 +264,7 @@ Esta é uma nota de rodapé [^1].
     }
     ```
 
---------------------------
+---
 
 ## Referências/variáveis ##
 
@@ -277,13 +278,13 @@ Exemplo com uma imagem:
 
 
 [site]: riss.com.br "Home de meu site"
-[et]: media/et.png "et"
+[et]: ../media/et.png "et"
 
---------------------------
+---
 
 ## Emojis e símbolos ##
 
-&xrArr; É possível utilizar símbolos HTML através de seus códigos em um arquivo markdown. O símbolo &xrArr; utilizado neste arquivo é um exemplo. Este [link](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references "Lista de referências de caracteres HTML") possui os símbolos HTML.
+&xrArr; É possível utilizar símbolos HTML através de seus códigos em um arquivo markdown. O símbolo &xrArr; utilizado neste arquivo é um exemplo. O código `&xrArr;` é digitado no testo deste arquivo e é renderizado como uma seta. Este [link](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references "Lista de referências de caracteres HTML") possui os símbolos HTML.
 
 &xrArr; Também é possível inserir emojis de forma similar aos símbolos HTML. Este [link](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md "Lista de emojis") possui emojis para se utilizar em markdown no GitHub. 
 
