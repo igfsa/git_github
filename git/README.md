@@ -313,6 +313,10 @@ Na saída do comando, a branch principal (branch que está sendo utilizado no mo
 
 	`git push -d origin <nome_branch>`
 
+	Caso exista uma tag com o  mesmo nome é necessário indicar a referência completa para a branch. 
+
+	`git push -d origin refs/heads/<nome_branch>`
+
 * Para renomear uma branch:
 
 	`$ git branch -m 'nome-antigo' 'nome-novo' `
