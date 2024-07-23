@@ -305,9 +305,13 @@ Na saída do comando, a branch principal (branch que está sendo utilizado no mo
 
 	A opção -b cria um novo branch, é uma ação correspondente a executar a criação do branch e logo após acessá-lo.
 
-* Para deletar um branch (obs.: o uso de -D ao invés de -d força a deleção de uma branch que não foi adicionada a principal através de merge ou rebase):
+* Para deletar um branch localmente (obs.: o uso de -D ao invés de -d força a deleção de uma branch que não foi adicionada a principal através de merge ou rebase):
 
 	`$ git branch -D <nome_branch>`
+
+* Para deletar remotamente:
+
+	`git push -d origin <nome_branch>`
 
 * Para renomear uma branch:
 
