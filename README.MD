@@ -16,7 +16,7 @@ Todos os subdiretórios possuem uma pasta de rascunho com as anotações iniciai
 * ### Markdown :m: ###
     O repositório markdown apresenta instruções e informações relativas ao uso de arquivos '.md', muito utilizado no GitHub para o README.md, que ao abrir um repositório na plataforma é mostrado seu conteúdo renderizado na tela inicial do mesmo. 
 
-* ### Playground :: ###
+* ### Playground :carousel_horse::ferris_wheel::roller_coaster: ###
     O repositório playground possui pastas e arquivos para testes. 
 
 ---

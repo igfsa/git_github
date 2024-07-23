@@ -266,7 +266,11 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 <img src="../media/git_reset_escuro.gif" width="500">
  
-&xrArr; O uso de reset sem usar um hashid e com a opção hard permite reverter a adição de arquivos ao índice (adicionados com git add), porém sem perder suas alterações:
+&xrArr; O uso de reset sem usar um hashid e com a opção hard permite reverter a adição de arquivos ao índice (adicionados com git add), voltando ao último commit:
+
+`$ git reset --hard`
+
+&xrArr; O uso de reset sem usar um hashid e com o indicador HEAD permite reverter a adição de arquivos ao índice (adicionados com git add), voltando ao último commit, porém sem remover as modificações do arquivo:
 
 `$ git reset HEAD`
 
