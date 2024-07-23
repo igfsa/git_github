@@ -305,6 +305,10 @@ Na saída do comando, a branch principal (branch que está sendo utilizado no mo
 
 	`$ git branch -D <nome_branch>`
 
+* Para renomear uma branch:
+
+	`$ git branch -m 'nome-antigo' 'nome-novo' `
+
 ---
 
 ## Merge :arrow_right::o::arrow_left: ##

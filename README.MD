@@ -1,4 +1,4 @@
-# Descrição #
+# Descrição :information_source: #
 
 Este repositório tem como objetivo auxiliar no uso das plataformas Git e GitHub. 
 
@@ -10,12 +10,14 @@ Todos os subdiretórios possuem uma pasta de rascunho com as anotações iniciai
 * ### Git ###
     O repositório git apresenta arquivos com descrições de alguns dos principais comandos do git, com explicações e como utilizar.
 
-* ### GitHub ###
+* ### GitHub :octocat: ###
     O repositório github apresenta arquivos com descrições de alguns dos principais comandos do github, com explicações e como utilizar, além do uso de gist. Também possui arquivos relacionados a adição de chaves SSH no sistema. 
 
-* ### Markdown ###
+* ### Markdown :m: ###
     O repositório markdown apresenta instruções e informações relativas ao uso de arquivos '.md', muito utilizado no GitHub para o README.md, que ao abrir um repositório na plataforma é mostrado seu conteúdo renderizado na tela inicial do mesmo. 
 
+* ### Playground :: ###
+    O repositório playground possui pastas e arquivos para testes. 
 
 ---
 
