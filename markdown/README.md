@@ -1,4 +1,4 @@
-## Introdução ##
+## Introdução :information_source: ##
 
 &xrArr; Markdown é um arquivo que utiliza recursos para renderização de seu conteúdo como HTML. Ao adicionar um arquivo como README.md, o GitHub utiliza deste arquivo para renderizar na página do diretório do arquivo, assim atribuindo descrição direta a página. 
 
@@ -6,13 +6,13 @@ Este documento indica e serve de referência para alguns dos principais recursos
 
 ---
 
-## Parágrafos ##
+## Parágrafos :arrow_down::arrow_right: ##
 
 &xrArr; Para separar parágrafos devem ser utilizados dois enters, assim irá ocorrer a renderização do elemento como um parágrafo. Um enter simples indica quebra de linha, mas não um novo parágrafo.
 
 ---
 
-## Títulos ##
+## Títulos :capital_abcd: ##
 
 &xrArr; Títulos podem ser marcados utilizando `#`. Por basear no HTML, existem 6 tamanhos de título que podem ser aplicados, com a quantidade de `#` utilizados indicado qual tamanho de título estamos usando. 
 
@@ -38,13 +38,13 @@ Título 2
 
 ---
 
-## Divisão horizontal ##
+## Divisão horizontal :stop_sign: ##
 
 &xrArr; Uma divisão horizontal pode ser feita inserindo `---` em uma linha.
 
 ---
 
-## Itálico ##
+## Itálico :crayon: ##
 
 &xrArr; Inserir textos ém itálico é possível ao inserir a mensagem entre ou asterisco ou underline, um ao início e um ao final. Espaço junto dos caracteres de marcação impede o uso deste recurso.
 
@@ -52,7 +52,7 @@ _Itálico 1_ *Itálico 2*
 
 ---
 
-## Negrito ##
+## Negrito :black_nib: ##
 
 &xrArr; Inserir textos em negrito é possível ao inserir a mensagem entre ou dois asteriscos ou dois underlines, dois ao início e dois ao final. Espaço junto dos caracteres de marcação impede o uso deste recurso.
 
@@ -60,7 +60,7 @@ __Negrito 1__ **Negrito 2**
 
 ---
 
-## Tachado ##
+## Tachado :no_entry: ##
 
 &xrArr; Inserir textos tachados é possível ao inserir a mensagem entre dois tils, dois ao início e dois ao final. 
 
@@ -68,7 +68,7 @@ __Negrito 1__ **Negrito 2**
 
 ---
 
-## Subscrito ##
+## Subscrito :arrow_down::abcd: ##
 
 &xrArr; Subscrito pode ser feito inserindo o conteúdo entre `<sub></sub>`.
 
@@ -76,7 +76,7 @@ H<sub>2</sub>O
 
 ---
 
-## Sobrescrito ##
+## Sobrescrito :arrow_up::abcd: ##
 
 &xrArr; Sobrescrito pode ser feito inserindo o conteúdo entre `<sup></sup>`.
 
@@ -84,7 +84,7 @@ H<sub>2</sub>O
 
 ---
 
-## Links ##
+## Links :link: ##
 
 &xrArr; Links podem ser inseridos utilizando colchetes para identificar o  texto a ser exibido e logo em seguida parênteses com o link de destino. Dentro dos parênteses contendo o link também é possível inserir um texto ao sobrepor o mouse. 
 
@@ -96,7 +96,7 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
 
 ---
 
-## Citações ##
+## Citações :round_pushpin::scroll: ##
 
 &xrArr; Citações podem ser destacadas ao inserir `>` no início das linhas da citação. 
 
@@ -104,7 +104,7 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
 
 ---
 
-## Listas ##
+## Listas :memo: ##
 
 &xrArr; Listas não ordenadas podem ser criadas ao inserir `*` no inicio da linha e para subitens utilizando tabulação. 
 
@@ -147,7 +147,7 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
 
 ---
 
-## Imagens ##
+## Imagens :film_strip: ##
 
 &xrArr; Imagens presentes no diretório podem ser inseridas. É feito de forma semelhante à inserção de links, com necessidade de inserir o símbolo ! antes do primeiro colchete.
 
@@ -163,7 +163,7 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
 
 ---
 
-## Tabelas ##
+## Tabelas :date: ##
 
 &xrArr; Tabelas também podem ser inseridas, utilizando `|` para delimitar colunas e `-` para dividir cabeçalhos.
 
@@ -185,7 +185,7 @@ Potência | Valor
 
 ---
 
-## Texto de código ##
+## Texto de código :desktop_computer: ##
 
 &xrArr; É possível inserir texto de código, que será renderizado em um bloco com destaque. Os hyperlinks ou recursos que seriam utilizados para renderização do markdown também são ignorados. Pode ser feito inserindo o código entre &grave; &grave;.
 
@@ -233,7 +233,7 @@ void main() {
 
 ---
 
-## Lista de tarefas ##
+## Lista de tarefas :ballot_box_with_check: ##
 
 &xrArr; É possível criar uma lista de tarefas, onde serão renderizadas caixas de seleção que possuem indicativo de marcação. Para criar a caixa, basta digitar `[ ]`. Para marcar a caixa, basta inserir `x` entre os colchetes
 
@@ -245,7 +245,7 @@ void main() {
 
 ---
 
-## Notas de rodapé ##
+## Notas de rodapé :triangular_flag_on_post: ##
 
 &xrArr; Notas de rodapé podem ser inseridas colocando entre colchetes o nome da nota no local desejado `[nota]` e o conteúdo sendo indicado em outro local com o nome da nota entre colchetes, dois pontos e o conteúdo da nota `[nota]: conteúdo`. Para notas de múltiplas linhas, a tabulação faz o vínculo. Elementos como blocos de código podem ser inseridos e o conteúdo da nota pode ser inserido em qualquer lugar do arquivo desde que não esteja dentro de outros elementos como tabelas, porém sua exibição irá ocorrer no final do arquivo.
 
@@ -266,7 +266,7 @@ Esta é uma nota de rodapé [^1].
 
 ---
 
-## Referências/variáveis ##
+## Referências/variáveis :superhero_man::shield::us: ##
 
 &xrArr; É possível criar referências de links e diretórios dentro do arquivo e utiliza-las como variáveis. Desta forma, ao inserir a referência na renderização é utilizado o conteúdo atribuído a ela, assim evitando de repetir o conteúdo na escrita do material. São configuradas com `[nome]: conteúdo` e chamadas através de `[nome]`
 
@@ -282,7 +282,7 @@ Exemplo com uma imagem:
 
 ---
 
-## Emojis e símbolos ##
+## Emojis e símbolos :smile::information_source: ##
 
 &xrArr; É possível utilizar símbolos HTML através de seus códigos em um arquivo markdown. O símbolo &xrArr; utilizado neste arquivo é um exemplo. O código `&xrArr;` é digitado no testo deste arquivo e é renderizado como uma seta. Este [link](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references "Lista de referências de caracteres HTML") possui os símbolos HTML.
 

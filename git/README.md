@@ -1,4 +1,4 @@
-## Introdução ##
+## Introdução :information_source: ##
 
 O Git é uma plataforma de versionamento de código. 
 Através dele é possível  registrar e visualizar o histórico de arquivos e pastas.

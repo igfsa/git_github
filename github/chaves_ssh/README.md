@@ -1,4 +1,4 @@
-## Introdução ##
+## Introdução :information_source: ##
 
 &xrArr; O GitHub solicita autenticação com chaves SSH para acesso e operação em repositórios. Chaves SSH são criadas e devem ser adicionadas ao agente SSH para que o GitHub aceite a autenticação. Também devem ser vinculadas em uma conta de usuário do GitHub.
 
@@ -6,7 +6,7 @@
 
 ---
 
-## Gerando a chave SSH (processo em comum nas plataformas) ##
+## Gerando a chave SSH (processo em comum nas plataformas) :old_key: ##
  
 &xrArr; O comando abaixo permite a criação de uma chave SSH: 
 
@@ -22,7 +22,7 @@ O email inserido pode ser o email de cadastro no GitHub. Durante a criação tam
 
 ---
 
-## Adicionando a chave SSH ao agente ##
+## Adicionando a chave SSH ao agente :shipit: ##
 
 &xrArr; Uma vez adicionada é necessário adicionar a chave ao agente:
 
@@ -40,13 +40,13 @@ Este comando apenas remove as chaves do agente, não apaga os arquivos.
 
 ---
 
-## Para iniciar automaticamente as chaves SSH ao agente no início de uma sessão do terminal ## 
+## Para iniciar automaticamente as chaves SSH ao agente no início de uma sessão do terminal :arrow_forward::shipit: ## 
 
 &xrArr; Por padrão o agente SSH não armazena as chaves SSH adicionadas. Portanto em novos inícios de sessão, é necessário fazer o cadastro das chaves ao agente. Para fazer esse processo de início automático um script deve ser adicionado aos arquivos de inicialização do terminal. 
 
 &xrArr; Em ambos scripts é necessário alterar `<caminho_do_arquivo_com_chave_ssh>` para o caminho da chave SSH criada. 
 
-### No Windows ###
+### No Windows :key::window: ###
 
 &xrArr; No final do arquivo .profile ou no arquivo .bashrc, ambos presentes na pasta do usuário:
 
@@ -80,7 +80,7 @@ fi
 unset env
 ```
 
-### No Linux ###
+### No Linux :key::penguin: ###
 
 &xrArr; No final do arquivo bash.bashrc presente em /etc:
 
@@ -94,7 +94,7 @@ ssh-add <caminho_do_arquivo_com_chave_ssh>
 
 ---
 
-## Adicionando a chave no GitHub ##
+## Adicionando a chave no GitHub :key::octocat: ##
 
 &xrArr; Com a chave adicionada ao agente SSH, é necessário adicioná-la no GitHub:
 
