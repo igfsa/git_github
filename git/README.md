@@ -3,6 +3,8 @@
 O Git é uma plataforma de versionamento de código. 
 Através dele é possível  registrar e visualizar o histórico de arquivos e pastas.
 
+O arquivo progit.pdf é um livro disponibilizado pela plataforma com comandos, instruções de uso e outros relativos a plataforma.
+
 ---
 
 ## Iniciar o Git :checkered_flag: ##
