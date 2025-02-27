@@ -125,7 +125,7 @@ Caso a necessidade de um link ou contato seja mais simples, apenas com o link de
    1. Uno
       1. 1.0
       2. 1.4
-   2. Mob1
+   2. Mobi
       1. 1.0
       2. 1.4
 2. Renault 
@@ -230,6 +230,8 @@ void main() {
     </body>
 </html>
 ```
+
+&xrArr; [Lista de linguagens suportadas](https://github.com/jincheng9/markdown_supported_languages)
 
 ---
 

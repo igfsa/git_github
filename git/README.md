@@ -110,6 +110,8 @@ A opção -m do comando commit permite adicionar uma mensagem ao commit realizad
 
 &xrArr; Como retorno do commit, recebemos informações da operação realizada e o hash id da operação no repositório remoto.
 
+---
+
 ## Log :scroll: ##
 
 &xrArr; Para visualizar o log do repositório:
