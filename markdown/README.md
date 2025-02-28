@@ -86,13 +86,27 @@ H<sub>2</sub>O
 
 ## Links :link: ##
 
-&xrArr; Links podem ser inseridos utilizando colchetes para identificar o  texto a ser exibido e logo em seguida parênteses com o link de destino. Dentro dos parênteses contendo o link também é possível inserir um texto ao sobrepor o mouse. 
+&xrArr; Links podem ser inseridos utilizando colchetes para identificar o  texto a ser exibido e logo em seguida parênteses com o link de destino. Dentro dos parênteses contendo o link também é possível inserir um texto de ajuda. 
+
+`[texto](link "texto de ajuda")`
 
 [Meu site](www.riss.com.br "Home de meu site")
 
-Caso a necessidade de um link ou contato seja mais simples, apenas com o link de destino, o conteúdo pode ser inserido entre `< >`
+&xrArr; Caso a necessidade de um link ou contato seja mais simples, apenas com o link de destino, o conteúdo pode ser inserido entre `< >`
 
 <https://www.riss.com.br>
+
+&xrArr; Links para outros arquivos ou diretórios também podem ser utilizados, com um caminho relativo.
+
+`[texto](caminho_relativo)`
+
+[progit pdf](../git/progit.pdf)
+
+&xrArr; Para arquivos markdown também é possível adicionar o link para uma seção específica. Caso não seja especificado um caminho relativo, será utilizado o atual arquivo, assim a referência será para uma seção do atual arquivo. 
+
+`[texto](caminho_relativo#secao)`
+
+[main README.md #markdown](../README.MD#markdown-m)
 
 ---
 
