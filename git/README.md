@@ -258,7 +258,7 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 &xrArr; Para retornar ao commit anterior após um novo commit:
 
-`$ git reset HEAD' --hard`
+`$ git reset HEAD --hard`
 
 ---
 
