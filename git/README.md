@@ -1,6 +1,6 @@
-## Introdução :information_source: ##
+# Introdução :information_source: #
 
-O Git é uma plataforma de versionamento de código. 
+O Git é uma plataforma de versionamento de código.
 Através dele é possível  registrar e visualizar o histórico de arquivos e pastas.
 
 O arquivo progit.pdf é um livro disponibilizado pela plataforma com comandos, instruções de uso e outros relativos a plataforma.
@@ -9,9 +9,9 @@ O arquivo progit.pdf é um livro disponibilizado pela plataforma com comandos, i
 
 ## Iniciar o Git :checkered_flag: ##
 
-&xrArr; O Git opera apenas em repositórios em que ele foi iniciado: 
-	
-`$ git init` 
+&xrArr; O Git opera apenas em repositórios em que ele foi iniciado:
+
+`git init`
 
 ---
 
@@ -19,7 +19,7 @@ O arquivo progit.pdf é um livro disponibilizado pela plataforma com comandos, i
 
 &xrArr; É possível monitorar o projeto com o git, se existem mudanças a serem adicionadas ou commitadas, etc:
 
-`$ git status`
+`git status`
 
 ---
 
@@ -27,11 +27,11 @@ O arquivo progit.pdf é um livro disponibilizado pela plataforma com comandos, i
 
 &xrArr; O git possui um comando com informações sobre uso do software:
 
-`$ git --help`
+`git --help`
 
 &xrArr; Também é possível pesquisar por ajuda para algum comando em específico:
 
-`$ git <comando> --help`
+`git <comando> --help`
 
 ---
 
@@ -39,20 +39,21 @@ O arquivo progit.pdf é um livro disponibilizado pela plataforma com comandos, i
 
 &xrArr; Limpar o projeto git de arquivos e pastas desnecessários ou criados erroneamente (garbage collector). Útil em casos de text file busy:
 
-`$ git gc`
+`git gc`
 
 ---
 
 ## Arquivo .gitignore :see_no_evil: ##
 
 &xrArr; O arquivo .gitignore serve para adicionar diferentes arquivos ou tipos de arquivos que devem ser ignorados para o repositório git. Por exemplo, arquivos de testes, arquivos de banco de dados, ou arquivos com credenciais.
-	
+
 &xrArr; Podem ser adicionados:
-* arquivos, como <exemplo.txt>;
-* diretórios, como <**diretorio>, ao utilizar ** o git mapeia os subdiretórios;
-* extensões, como <*.sql>, desta forma, todos os arquivos com a extensão indicada serão ignorados.
-	
-Este [link](https://github.com/github/gitignore) apresenta um repositório no git com modelos de gitignore para os principais tipos de projetos https://github.com/github/gitignore.
+
+* arquivos, como `exemplo.txt`;
+* diretórios, como `**diretorio`, ao utilizar `**` o git mapeia os subdiretórios;
+* extensões, como `*.sql`, desta forma, todos os arquivos com a extensão indicada serão ignorados.
+
+[Este link](https://github.com/github/gitignore) apresenta um repositório no git com modelos de gitignore para os principais tipos de projetos.
 
 ---
 
@@ -60,29 +61,29 @@ Este [link](https://github.com/github/gitignore) apresenta um repositório no gi
 
 &xrArr; Ao iniciar o git em um repositório deve ser iniciado um usuário para identificar quem está realizando as operações:
 
-`$ git config user.name "<usuario>"`
+`git config user.name "<usuario>"`
 
-`$ git config user.email "<usuario@email.com>"`
+`git config user.email "<usuario@email.com>"`
 
 &xrArr; Em computadores com apenas um usuário os usuários podem ser habilitados globalmente, assim ao iniciar um novo repositório o usuário será iniciado automaticamente:
 
-`$ git config --global user.name "usuario"`
+`git config --global user.name "usuario"`
 
-`$ git config --global user.email "usuario@email.com"`
+`git config --global user.email "usuario@email.com"`
 
 ---
 
 ## Git config :gear: ##
 
-&xrArr; Ao utilizar `$ git config` estamos alterando o arquivo config dentro da pasta .git. Este arquivo é responsável pelas configurações do repositório Git. Usar --global indica que as configurações vinculadas estão se relacionando à todos repositórios na maquina.
+&xrArr; Ao utilizar `git config` estamos alterando o arquivo config dentro da pasta .git. Este arquivo é responsável pelas configurações do repositório Git. Usar --global indica que as configurações vinculadas estão se relacionando à todos repositórios na maquina.
 
 &xrArr; Para buscar itens dentro de config podem utilizar a opção --get do comando. Por exemplo, buscar o nome do usuário configurado no repositório:
 
-`$ git config --get user.name`
+`git config --get user.name`
 
 &xrArr; Também é possível listar todas configurações:
 
-`$ git config -l`
+`git config -l`
 
 ---
 
@@ -90,11 +91,11 @@ Este [link](https://github.com/github/gitignore) apresenta um repositório no gi
 
 &xrArr; Para adicionar ou atualizar um arquivo ao índice do repositório git, é necessário utilizar o comando:
 
-`$ git add <arquivo> `
+`git add <arquivo>`
 
 &xrArr; Podem ser adicionados ou atualizados todos arquivos ao mesmo tempo através do comando:
 
-`$ git add . ` 
+`git add .`
 
 &xrArr; A adição de arquivos ao índice se faz necessária sempre que ocorra criação ou alteração de um arquivo no repositório e é obrigatório que todos arquivos estejam indexados para realizar um commit.
 
@@ -104,7 +105,7 @@ Este [link](https://github.com/github/gitignore) apresenta um repositório no gi
 
 &xrArr; Após a inclusão dos arquivos no índice do repositório, é necessário realizar um commit, que indicará o estado atual do índice, criando um identificador (hasid) o qual é adicionado ao log do repositório:
 
-`$ git commit -m '<mensagem>'`
+`git commit -m '<mensagem>'`
 
 A opção -m do comando commit permite adicionar uma mensagem ao commit realizado. Este processo é obrigatório ao realizar um commit e caso a operação seja feita sem o uso de -m, será aberto um arquivo com a mensagem vinculada ao commit.
 
@@ -116,51 +117,52 @@ A opção -m do comando commit permite adicionar uma mensagem ao commit realizad
 
 &xrArr; Para visualizar o log do repositório:
 
-` $ git log `
+` git log `
 
 Aqui é possível identificar os commits que ocorreram no repositório. O hash id retornado quando realizamos um commit ao repositório são os 7 primeiros dígitos das identificações das operações retornadas no arquivo de log. Também são retornados o comentário e dados de hora e data e usuário.
 
 &xrArr; Para navegar na saída do comando:
+
 * A tecla enter exibe mais linhas
-* ctrl+b volta para as linhas iniciais 
-* Digitar `/<exemplo>` permite realizar busca dentro do log. 
+* ctrl+b volta para as linhas iniciais
+* Digitar `/<exemplo>` permite realizar busca dentro do log.
 * Para sair do arquivo digitar q.
 
-&xrArr; O comando git log possui algumas opções especiais: 
+&xrArr; O comando git log possui algumas opções especiais:
 
 * Para visualizar os últimos n logs:
   
-    `$ git log -n`
+  `git log -n`
 
-* Para visualizar os logs resumidos em uma linha: 
+* Para visualizar os logs resumidos em uma linha:
 
-    `$ git log --oneline`
+  `git log --oneline`
 
 * Para visualizar os logs antes de determinada data:
 
-    `$ git log --before="<AAAA-MM-DD>"`
+  `git log --before="<AAAA-MM-DD>"`
 
 * Para visualizar os logs depois de determinada data:
 
-    `$ git log --after="<AAAA-MM-DD>"`
+  `git log --after="<AAAA-MM-DD>"`
 
 * Para visualizar os logs desde de determinado tempo:
 
-    `$ git log --since="<n> days ago"`
+  `git log --since="<n> days ago"`
 
 * Para visualizar os logs de determinado autor:
 
-    `$ git log --author="<nome>"`
+  `git log --author="<nome>"`
 
-    *Obs: Case sensitive, porém realiza a busca parcial, não é necessário digitar o nome completo.
+  *Obs: Case sensitive, porém realiza a busca parcial, não é necessário digitar o nome completo.
 
 * Para alterar se o log será retornado exibindo todo o arquivo:
 
-    `$ git config core.pager cat`
+  `git config core.pager cat`
 
 * Caso seja desejado que o log exiba apenas o tamanho da tela do terminal:
 
-    ` $ git config core.pager less`
+  `git config core.pager less`
 
 ---
 
@@ -168,13 +170,13 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 &xrArr; O arquivo log identifica os últimos commits no repositório local e remoto, no último commit vemos o indicativo head. Este indicativo mostra a "cabeça" atual do repositório.
 
-&xrArr; Porém, é possível indicar outro id como head, assim fazendo com que a imagem dos arquivos volte ao ponto do commit indicado pelo hashid:
+&xrArr; Porém, é possível indicar outro id como head, assim fazendo com que a imagem dos arquivos volte ao ponto do commit indicado pelo hash-id:
 
-`$ git checkout <hashid>`
+`git checkout <hash-id>`
 
 &xrArr; Para retornar ao último commit:
 
-`$ git checkout <nome_branch_principal>`
+`git checkout <nome_branch_principal>`
 
 ---
 
@@ -182,7 +184,7 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
  &xrArr; É possível utilizar o git para renomear arquivos ou diretórios:
 
-`$ git mv <item> <novo_nome>`
+`git mv <item> <novo_nome>`
 
 &xrArr; Caso o rename de um item seja feito pelo explorador, será necessário executar o comando git add com o nome do item antigo.
 
@@ -192,7 +194,7 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 &xrArr; Também é possível utilizar o git para deletar arquivos ou diretórios:
 
-`$ git rm <item>`
+`git rm <item>`
 
 &xrArr; Assim como para o rename, ao deletar um item pelo explorador, será necessário executar o comando git add com o nome do item antigo.
 
@@ -200,23 +202,23 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 ## Diff :mag: ##
 
-&xrArr; É possível visualizar a diferença entre commits utilizando o git.
+&xrArr; É possível visualizar a diferença entre commits utilizando o git:
 
 * Diferença entre o momento atual e o último commit:
 
-    `$ git diff`
+  `git diff`
 
 * Diferença entre as mudanças indicadas em status e o último commit:
-	
-	`$ git diff --staged`
-	
+
+  `git diff --staged`
+
 * Diferença entre o momento atual e um específico commit:
-	
-    `$ git diff <hashid>`
+
+  `git diff <hash-id>`
 
 * Diferença entre dois específicos commits:
 
-    `$ git diff <hashid mais velho>..<hashid mais novo>`
+  `git diff <hash-id mais velho>..<hash-id mais novo>`
 
 ---
 
@@ -224,7 +226,7 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 &xrArr; O comando amend permite alteração do último commit. Caso a mensagem do arquivo esteja errada ou tenha faltado algum item, este comando permite refazer no último commit:
 
-`$ git commit --amend -m '<mensagem>'`
+`git commit --amend -m '<mensagem>'`
 
 ---
 
@@ -232,9 +234,9 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 &xrArr; Um item que foi adicionado ao estágio (através de git add) pode ser removido:
 
-` $ git restore --staged <item>`
+`git restore --staged <item>`
 
---- 
+---
 
 ## Redefinindo arquivos :open_file_folder::arrow_heading_down: ##
 
@@ -242,23 +244,23 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 * Para arquivos que não foram colocados em estágio:
 
-    `$ git checkout <item>`
+  `git checkout <item>`
 
 * Caso tenha necessidade de fazer em todos os arquivos:
 
-    ` $ git checkout .`
+  `git checkout .`
 
 * Para arquivos que foram colocados em estágio:
-    
-    `$ git reset HEAD --hard`
-    
-    `$ git checkout HEAD -- .`
-    
-    * A opção -- faz com que o comando ignore opções adicionais.
+
+  `git reset HEAD --hard`
+
+  `git checkout HEAD -- .`
+
+  *A opção -- faz com que o comando ignore opções adicionais.
 
 &xrArr; Para retornar ao commit anterior após um novo commit:
 
-`$ git reset HEAD' --hard`
+`git reset HEAD' --hard`
 
 ---
 
@@ -266,84 +268,84 @@ Aqui é possível identificar os commits que ocorreram no repositório. O hash i
 
 &xrArr; Observa-se que o uso de git reset recebe como parâmetro um commit, então o comando pode ser utilizado para retornar o repositório para o estado em determinado commit:
 
-`$ git reset <hashid> --hard`
+`git reset <hashid> --hard`
 
 <img src="../media/git_reset_escuro.gif" width="500">
- 
-&xrArr; O uso de reset sem usar um hashid e com a opção hard permite reverter a adição de arquivos ao índice (adicionados com git add), voltando ao último commit:
 
-`$ git reset --hard`
+&xrArr; O uso de reset sem usar um hash-id e com a opção hard permite reverter a adição de arquivos ao índice (adicionados com git add), voltando ao último commit:
 
-&xrArr; O uso de reset sem usar um hashid e com o indicador HEAD permite reverter a adição de arquivos ao índice (adicionados com git add), voltando ao último commit, porém sem remover as modificações do arquivo:
+`git reset --hard`
 
-`$ git reset HEAD`
+&xrArr; O uso de reset sem usar um hash-id e com o indicador HEAD permite reverter a adição de arquivos ao índice (adicionados com git add), voltando ao último commit, porém sem remover as modificações do arquivo:
+
+`git reset HEAD`
 
 ---
 
-## Branchs :arrow_up_down: ##
+## Branch :arrow_up_down: ##
 
-&xrArr; Branchs (ramificações) são utilizados para trabalhar com diferentes linhas de trabalho simultaneamente. Uma pessoa pode estar desenvolvendo uma funcionalidade ao mesmo tempo que outra pessoa está desenvolvendo outra.
+&xrArr; Branches (ramificações) são utilizados para trabalhar com diferentes linhas de trabalho simultaneamente. Uma pessoa pode estar desenvolvendo uma funcionalidade ao mesmo tempo que outra pessoa está desenvolvendo outra.
 A base de uma branch é o ponto de inicio da branch, o último commit em comum entre o ramo principal e o novo.
 
 <img src="../media/git_branch_escuro.gif" width="500">
 
-&xrArr; É possível ver as branchs existentes no projeto:
-	
-`$ git branch`
+&xrArr; É possível ver as branches existentes no projeto:
+
+`git branch`
 
 Na saída do comando, a branch principal (branch que está sendo utilizado no momento) é indicada com um asterisco.
 
-&xrArr; Entre os comandos para lidar com branchs, destacam-se:
+&xrArr; Entre os comandos para lidar com branches, destacam-se:
 
 * Para criar uma nova branch:
 
-	`$ git branch <nome_branch>`
+  `git branch <nome_branch>`
 
 * Para alterar para determinada branch:
   
-	`$ git checkout <nome_branch>`
+  `git checkout <nome_branch>`
 
-* Para criar um branch já em seu acesso: 
+* Para criar um branch já em seu acesso:
 
-	`$ git checkout -b <nome_branch>`
+  `git checkout -b <nome_branch>`
 
-	A opção -b cria um novo branch, é uma ação correspondente a executar a criação do branch e logo após acessá-lo.
+ A opção -b cria um novo branch, é uma ação correspondente a executar a criação do branch e logo após acessá-lo.
 
 * Para deletar um branch localmente (obs.: o uso de -D ao invés de -d força a deleção de uma branch que não foi adicionada a principal através de merge ou rebase):
 
-	`$ git branch -D <nome_branch>`
+  `git branch -D <nome_branch>`
 
 * Para deletar remotamente:
 
-	`git push -d origin <nome_branch>`
+  `git push -d origin <nome_branch>`
 
-	Caso exista uma tag com o  mesmo nome é necessário indicar a referência completa para a branch. 
+  * Caso exista uma tag com o  mesmo nome é necessário indicar a referência completa para a branch.
 
-	`git push -d origin refs/heads/<nome_branch>`
+    `git push -d origin refs/heads/<nome_branch>`
 
 * Para renomear uma branch:
 
-	`$ git branch -m 'nome-antigo' 'nome-novo' `
+  `git branch -m 'nome-antigo' 'nome-novo'`
 
 ---
 
 ## Merge :arrow_right::o::arrow_left: ##
 
-&xrArr; Merges mesclam duas branchs em um novo commit posterior na branch principal.
+&xrArr; Merges mesclam duas branches em um novo commit posterior na branch principal.
 
 <img src="../media/git_merge_escuro.gif" width="500">
 
-&xrArr; Para realizar a operação entre entre branchs deve ser executado o comando:
+&xrArr; Para realizar a operação entre entre branches deve ser executado o comando:
 
-`$ git merge <nome_branch>`
+`git merge <nome_branch>`
 
 O comando deve ser rodado da branch principal com o parâmetro sendo a branch a ser adicionada.
-		
+  
 Após o merge, a branch auxiliar pode ser deletada:
 
-`$ git branch -d <nome_branch>`
+`git branch -d <nome_branch>`
 
-Aqui não é necessário usar o -D para forçar o delete, pois a branch já está adicionada a branch principal. 
+Aqui não é necessário usar o -D para forçar o delete, pois a branch já está adicionada a branch principal.
 
 ---
 
@@ -353,23 +355,23 @@ Aqui não é necessário usar o -D para forçar o delete, pois a branch já est�
 
 <img src="../media/git_rebase_escuro.gif" width="500">
 
-&xrArr; Para fazer um rebase entre branchs:
+&xrArr; Para fazer um rebase entre branches:
 
-`$ git rebase <nome_branch>`
+`git rebase <nome_branch>`
 
 O comando deve ser rodado da branch principal com o parâmetro sendo a branch a ser adicionada.
 
 &xrArr; Após o rebase, a branch auxiliar pode ser deletada:
 
-`$ git branch -d <nome_branch>`
+`git branch -d <nome_branch>`
 
 ---
 
 ## Clonando repositórios :mage::mirror::mage: ##
 
 &xrArr; É possível utilizar o git para clonar projetos em diferentes locais:
-	
-`$ git clone <projeto base> <local de clonagem>`
+
+`git clone <projeto base> <local de clonagem>`
 
 Repositórios clonados podem buscar e enviar novos commits na origem, caso a mesma permita.
 
@@ -379,34 +381,33 @@ Repositórios clonados podem buscar e enviar novos commits na origem, caso a mes
 
 &xrArr; Trabalhando de um projeto clonado é possível buscar novos commits sem realizar mesclagem com o trabalho feito no projeto de origem:
 
-`$ git fetch`
+`git fetch`
 
 Os arquivos ficam armazenados dentro da pasta config. Para serem adicionados na pasta principal, deve ser realizado um rebase ou um merge.
 
---- 
+---
 
 ## Recebendo atualizações de commit, pull :file_cabinet::incoming_envelope::card_file_box::file_folder: ##
 
 &xrArr; É possível realizar as operações de fetch e rebase juntamente:
 
-`$ git pull`
+`git pull`
 
 Para realizar um pull, o projeto corrente não deve possuir commits a serem enviados para o projeto de origem.
 
---- 
+---
 
 ## Repositórios bare :card_file_box::left_right_arrow::file_cabinet::left_right_arrow::card_file_box: ##
-
 
 &xrArr; Bare repositories são repositórios centralizados, utilizados para compartilhamento de códigos entre diferentes sessões. Repositórios no GitHub são exemplos de bare repository.
 
 Permite que outros repositórios enviem push com commits que contenham modificações para esse repositório central.
 
-Ao criar um bare, o repositório é iniciado sem a pasta .git, o conteúdo dessa pasta é criado diretamente na pasta. 
+Ao criar um bare, o repositório é iniciado sem a pasta .git, o conteúdo dessa pasta é criado diretamente na pasta.
 
 Para criar:
-	
-`$ git init --bare`
+
+`git init --bare`
 
 Os diretórios que irão enviar as modificações ao bare devem clonar o diretório bare inicial.
 
@@ -416,13 +417,13 @@ Os diretórios que irão enviar as modificações ao bare devem clonar o diretó
 
 &xrArr; Com o uso de bare repositories é possível subir para o repositório central modificações feitas:
 
-`$ git push`
+`git push`
 
 ---
 
-## Enviando novas branchs ao repositório central :arrow_up_down::incoming_envelope::file_cabinet: ##
+## Enviando novas branches ao repositório central :arrow_up_down::incoming_envelope::file_cabinet: ##
 
-&xrArr; Ao criar novas branchs para um repositório central, é necessário que após cria-lás no repositório local seja feito o envio da branch para o repositório remoto. Também é necessário configurar o ponto de montagem do repositório local para o repositório remoto. Assim será possível enviar commits feitos dentro daquela branch. Uma vez criada, ambas operações podem ser realizadas através do seguinte comando: 
+&xrArr; Ao criar novas branches para um repositório central, é necessário que após cria-lás no repositório local seja feito o envio da branch para o repositório remoto. Também é necessário configurar o ponto de montagem do repositório local para o repositório remoto. Assim será possível enviar commits feitos dentro daquela branch. Uma vez criada, ambas operações podem ser realizadas através do seguinte comando:
 
 `git push --set-upstream origin <nova_branch>`
 
@@ -430,7 +431,7 @@ Os diretórios que irão enviar as modificações ao bare devem clonar o diretó
 
 ## Tags :label: ##
 
-&xrArr; As tags no git marcam um determinado commit, representando o momento indicado. Similar aos branchs, onde ao realizar um branch é criado uma base para o mesmo, porém as tags não permitem novos commits baseados nelas.
+&xrArr; As tags no git marcam um determinado commit, representando o momento indicado. Similar aos branches, onde ao realizar um branch é criado uma base para o mesmo, porém as tags não permitem novos commits baseados nelas.
 
 Tags são úteis para versionamento ou entregas parciais de funcionalidade por exemplo. Permitem que o ambiente seja copiado ou visualizado no momento que foi criada.
 
@@ -438,30 +439,29 @@ Tags são úteis para versionamento ou entregas parciais de funcionalidade por e
 
 &xrArr; Para criar uma tag:
 
-`$ git tag <nome_tag>`
+`git tag <nome_tag>`
 
 &xrArr; Para visualizar as tags existentes:
 
-`$ git tag`
+`git tag`
 
 &xrArr; Após a criação a tag deve ser enviada via push para o repositório centralizador:
 
-`$ git push origin <nome_tag>`
+`git push origin <nome_tag>`
 
-&xrArr; Uma vez no repositório central, ela funcionará como outros objetos (como branchs), sendo necessário que os outros repositórios façam um pull para acessá-la.
+&xrArr; Uma vez no repositório central, ela funcionará como outros objetos (como branches), sendo necessário que os outros repositórios façam um pull para acessá-la.
 
 &xrArr; É possível acessar as tags e visualizar o repositório em seu momento
 
-`$ git checkout <nome_tag>`
+`git checkout <nome_tag>`
 
 &xrArr; Como não é possível realizar commits em tags, para trabalhar nas mesmas é necessário criar um branch baseado na tag. É possível criar e já fazer o acesso com apenas um comando:
 
-`$ git switch -c <nome_branch>`
+`git switch -c <nome_branch>`
 
-`$ git checkout -b <nome_branch>`
+`git checkout -b <nome_branch>`
 
-
-Os comandos acima realizam a mesma ação. O comando checkout foi inserido primeiramente e realiza ações visando branchs e arquivos. O git, para evitar confusões, em 2019 criou os comandos switch para manipular apenas branchs e restore para manipular apenas arquivos.
+Os comandos acima realizam a mesma ação. O comando checkout foi inserido primeiramente e realiza ações visando branches e arquivos. O git, para evitar confusões, em 2019 criou os comandos switch para manipular apenas branches e restore para manipular apenas arquivos.
 
 &xrArr; Após a criação da branch o processo de criação e edição de itens, além do processo de commits são feitos de forma normal. Uma vez finalizada as alterações na branch ela pode ser mesclada à master e pode ser criada uma nova tag.
 
@@ -471,9 +471,9 @@ Os comandos acima realizam a mesma ação. O comando checkout foi inserido prime
 
 &xrArr; O comando revert volta os objetos do repositório para um commit indicado, porém não remove os commits anteriores, gerando um novo commit. Desta forma, alterações que foram feitas ainda podem ser acessadas pelo log do repositório
 
-`$ git revert <hashid>`
+`git revert <hash-id>`
 
-Por padrão o comando já commita as mudanças em sua execução. É um atalho para realizar checkout dos arquivos para um momento anterior, adição de arquivos em estágio e commit com uma mensagem indicando a mudança 
+Por padrão o comando já faz o commit das mudanças em sua execução. É um atalho para realizar checkout dos arquivos para um momento anterior, adição de arquivos em estágio e commit com uma mensagem indicando a mudança
 
 Este comando é útil pois mudanças que forem descartadas ainda podem ser vistas no log do repositório
 
@@ -485,63 +485,63 @@ Funciona de forma análoga ao comando reset, porém o comando reset remove os co
 
 ## Tratando conflitos :bow_and_arrow::white_flag::dagger: ##
 
- &xrArr; Conflitos ocorrem quando ao realizar um commit há diferença na imagem do último commit e na imagem do repositório no momento atual (como imagem entende-se o repositório antes das modificações adicionadas ao índice). Por exemplo, ao operar com um repositório remoto, caso tenha ocorrido modificações no repositório remoto após o último pull, os arquivos de referência estarão diferentes do momento que os arquivos foram editados na máquina local. Portanto, o repositório terá diferença entre a imagem do último commit e o real último commit.   
- 
- Para projetos com divergências entre branchs, se faz necessário tratar os erros de conflito. 
+&xrArr; Conflitos ocorrem quando ao realizar um commit há diferença na imagem do último commit e na imagem do repositório no momento atual (como imagem entende-se o repositório antes das modificações adicionadas ao índice). Por exemplo, ao operar com um repositório remoto, caso tenha ocorrido modificações no repositório remoto após o último pull, os arquivos de referência estarão diferentes do momento que os arquivos foram editados na máquina local. Portanto, o repositório terá diferença entre a imagem do último commit e o real último commit.
 
-Por padrão o Git não realiza mais trativas para divergências e exibe uma mensagem de erro.
+&xrArr; Para projetos com divergências entre branches, se faz necessário tratar os erros de conflito.
 
+&xrArr; Por padrão o Git não realiza mais trativas para divergências e exibe uma mensagem de erro.
+
+```shell
+  hint: You have divergent branches and need to specify how to reconcile them.
+  hint: You can do so by running one of the following commands sometime before
+  hint: your next pull:
+  hint: 
+  hint:   git config pull.rebase false  # merge (the default strategy)
+  hint:   git config pull.rebase true   # rebase
+  hint:   git config pull.ff only       # fast-forward only
+  hint: 
+  hint: You can replace "git config" with "git config --global" to set a default
+  hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+  hint: or --ff-only on the command line to override the configured default per
+  hint: invocation.
 ```
-		hint: You have divergent branches and need to specify how to reconcile them.
-		hint: You can do so by running one of the following commands sometime before
-		hint: your next pull:
-		hint: 
-		hint:   git config pull.rebase false  # merge (the default strategy)
-		hint:   git config pull.rebase true   # rebase
-		hint:   git config pull.ff only       # fast-forward only
-		hint: 
-		hint: You can replace "git config" with "git config --global" to set a default
-		hint: preference for all repositories. You can also pass --rebase, --no-rebase,
-		hint: or --ff-only on the command line to override the configured default per
-		hint: invocation.
-```
 
-Conforme exibido na mensagem, existem 3 maneiras de lidar com a situação que podem ser configuradas através de git config: 
+&xrArr; Conforme exibido na mensagem, existem 3 maneiras de lidar com a situação que podem ser configuradas através de git config:
 
 * merge commit (comportamento padrão histórico)
 
-	`$ git config pull.rebase false`
+  `git config pull.rebase false`
 
-	Cria um novo commit que é pai dos commits que estão em conflito. Por sem um merge, pode gerar conflitos.
+  Cria um novo commit que é pai dos commits que estão em conflito. Por sem um merge, pode gerar conflitos.
 
-* rebasing nos commit locais 
+* rebasing nos commit locais
 
-	`$ git config pull.rebase true`
+  `git config pull.rebase true`
 
-	Ao realizar um rebase nos commits locais, é possível adicionar os commits do servidor remoto na master branch primeiramente e depois realizar um merge entre este e nossos commits locais. Devido ao merge também pode gerar conflitos
+  Ao realizar um rebase nos commits locais, é possível adicionar os commits do servidor remoto na master branch primeiramente e depois realizar um merge entre este e nossos commits locais. Devido ao merge também pode gerar conflitos
 
 * não faça nada por padrão (fast-forward)
 
-	`$ git config pull.ff only` 
+  `git config pull.ff only`
 
-	Realiza as operações que não requerem nenhuma tratativa de conflitos, caso seja necessário, o processo é abrotado e é retornado uma mensagem de erro. 
+  Realiza as operações que não requerem nenhuma tratativa de conflitos, caso seja necessário, o processo é abrotado e é retornado uma mensagem de erro.
 
-	É uma estratégia que possui benefícios pois os conflitos são tratados manualmente, assim reduzindo a chance de erros ou correções impróprias.
+  É uma estratégia que possui benefícios pois os conflitos são tratados manualmente, assim reduzindo a chance de erros ou correções impróprias.
 
-Independente das configurações aplicadas, é possível aplicar um pull com instruções para rebase simples 
+&xrArr; Independente das configurações aplicadas, é possível aplicar um pull com instruções para rebase simples:
 
-`$ git pull --rebase`
-		
-Ou realizar um merge commit 
+`git pull --rebase`
+  
+&xrArr; Ou realizar um merge commit:
 
-`$ git pull --rebase=merges`
+`git pull --rebase=merges`
 
-Essas duas opções apresentam a necessidade de tratar as divergências manualmente, o que cria a necessidade de análise dos arquivos e assim realizar as operações para a criação de um commit.
+&xrArr; Essas duas opções apresentam a necessidade de tratar as divergências manualmente, o que cria a necessidade de análise dos arquivos e assim realizar as operações para a criação de um commit.
 
-Será criado uma branch detached para as ações necessárias. Uma vez nela, para acompanhar o que foi realizado e o que ainda deve ser feito pode ser utilizado o comando status.
+&xrArr; Será criada uma branch detached para as ações necessárias. Uma vez nela, para acompanhar o que foi realizado e o que ainda deve ser feito pode ser utilizado o comando status.
 
-Com as alterações adicionadas para estágio, será necessário realizar um commit e continuar o rebase 
+&xrArr; Com as alterações adicionadas para estágio, será necessário realizar um commit e continuar o rebase
 
-`$ git rebase --continue`		
-		
-Após essas operações, será retornado para a branch principal com um novo commit realizado, assim criando a necessidade de realizar por fim o pull
+`git rebase --continue`  
+  
+&xrArr; Após essas operações, será retornado para a branch principal com um novo commit realizado, assim criando a necessidade de realizar por fim o pull
