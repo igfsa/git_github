@@ -45,14 +45,14 @@ git checkout -b feat/tarefa
 &xrArr; Após os testes locais, deve ser feito um merge da brach de desenvolvimento com a branch local.
 
 ``` shell
-# Envia a feat para o GitHub
+# Enviar a feat para o GitHub
 git push origin feat/historico-sessoes
 
-# Vai para a homolog e puxa ela para a máquina
+# Acessar branch de homolog e puxar ela para a máquina
 git checkout homolog
 git pull
 
-# Traz as novidades da feat para dentro da homolog
+# Trazer as novidades da feat para dentro da homolog
 git merge feat/historico-sessoes
 git push origin homolog
 ```
@@ -66,11 +66,11 @@ git push origin homolog
 &xrArr; O processo pode ser realizado de forma similar à adição de código à branch de homologação. O conteúdo é puxado diretamente da branch de desenvolvimento.
 
 ``` shell
-# Vai para a master e puxa ela para a máquina
+# Ir para a branch principal e puxar ela para a máquina
 git checkout master
 git pull
 
-# Traz as novidades da feat para dentro da master
+# Traz as novidades da feat para dentro da branch principal
 git merge feat/historico-sessoes
 git push origin master
 ```
@@ -86,10 +86,12 @@ git push origin master
   1. git merge master &rarr; branch homologação
   2. git rebase master &rarr; branch desenvolvimento
 
+---
+
 ##### Com a branch de homologação: Caso 1 #####
 
 ``` shell
-# 1. Buscar na master o código mais recente do servidor
+# 1. Buscar na branch principal o código mais recente do servidor
 git checkout master
 git pull
 
@@ -97,7 +99,7 @@ git pull
 git checkout homolog
 git pull 
 
-# 3. Trazer as alterações da master para dentro da homolog
+# 3. Trazer as alterações da branch principal para dentro da homolog
 git merge master
 
 # 4. Enviar as atualizações de volta para o GitHub para atualizar o servidor da Vercel/Fly
@@ -108,17 +110,19 @@ git push origin homolog
 
 &xrArr; Essa estratégia mantém o histórico de commits completo, importante para ambientes compartilhados.
 
+---
+
 ##### Com a branch de desenvolvimento: Caso 2 #####
 
 ``` shell
-# 1. Acessar a master e atualizar o local
+# 1. Acessar a branch principal e atualizar o local
 git checkout master
 git pull
 
 # 2. Acessar a branch de tarefa
 git checkout feat/tela-professores
 
-# 3. Aplicar o rebase com a master
+# 3. Aplicar o rebase com a branch principal
 git rebase master
 ```
 
@@ -136,3 +140,28 @@ git rebase master
 
 `git push origin feat/nome-da-tarefa --force-with-lease`
 > --force-with--lease realiza uma verificação do estado atual do repositório remoto e local. Caso sejam o mesmo, o commit é realizado, caso sejam divergentes, é mostrado erro.
+
+## Vinculando e usando Issues ##
+
+&xrArr; Para usar issues no fluxo de trabalho do git com github, é possível associar branches a issues. O processo pode ser feito via navegador ou colocando o nome da issue na branch relacionada.
+
+`git checkout -b feat/1-ajuste-visual`
+
+&xrArr; Ao enviar o commit de conclusão da tarefa, usar `closes #n` indica à plataforma que a issue deve ser fechada.
+
+`git commit -m "feat: ajuste visual. Closes #1"`
+
+## Finalizando tarefas ##
+
+&xrArr; Ao concluir tarefas, após encerrar a atividade e finalizar issues vinculadas, a branch de trabalho pode ser deletada.
+
+``` shell
+# 1. Acessar a branch principal 
+git checkout master
+
+# 2. Deletar a branch localmente
+git branch -d feat/1-tarefa
+
+# 3. Deletar a branch no servidor remoto
+git push origin --delete feat/1-tarefa
+```
