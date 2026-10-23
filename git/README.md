@@ -327,6 +327,26 @@ Na saída do comando, a branch principal (branch que está sendo utilizado no mo
 
   `git branch -m 'nome-antigo' 'nome-novo'`
 
+### Nomeação de Branches ###
+
+&xrArr; A especificação de branches aceita os seguintes prefixos e deve seguir a estrutura:
+
+`<tipo>/<descrição>`
+
+&xrArr; Prefixos de finalidade — descrevem o objetivo do trabalho:
+
+* feature/ (ou feat/): Para novas funcionalidades (ex.: feature/add-login-page, feat/add-login-page)
+
+* bugfix/ (ou fix/): Para correções de bugs (ex.: bugfix/fix-header-bug, fix/header-bug)
+
+* hotfix/: Para correções urgentes (ex.: hotfix/security-patch)
+
+* release/: Para branches de preparação de um lançamento (ex.: release/v1.2.0)
+
+* chore/: Para tarefas que não envolvem o código em si, como atualizações de dependências ou documentação (ex.: chore/update-dependencies)
+
+O projeto [Conventional Branch](https://conventionalbranch.org/) apresenta convenções na utilização de branches.  
+
 ---
 
 ## Merge :arrow_right::o::arrow_left: ##
